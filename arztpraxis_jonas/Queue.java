@@ -1,33 +1,78 @@
 
-/**
- * Write a description of class Queue here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Queue
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private Node head, tail;
 
-    /**
-     * Constructor for objects of class Queue
-     */
-    public Queue()
+    private class Node
     {
-        // initialise instance variables
-        x = 0;
+        private Object content;
+        private Node nextNode;
+
+        public Node(Object pContent, Node pNext)
+        { content = pContent;
+            nextNode = pNext;
+        }
+
+        public void setContent(Object pContent)
+        { 
+            content = pContent;
+        }
+
+        public Object content()
+        {
+            return content;
+        }
+
+        public void setNext(Node pNext)
+        { 
+            nextNode = pNext;
+        }
+
+        public Node next()
+        {
+            return nextNode;
+        }
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    public Queue() 
     {
-        // put your code here
-        return x + y;
+        head = null;
+        tail = null;
+    }
+
+    public boolean isEmpty(){
+        return head == null;
+    }
+
+    public void enqueue(Object pObject) 
+    { 
+        if (pObject != null){
+            Node lNewNode = new Node(pObject, null);
+            if (this.isEmpty()){
+                head = lNewNode;
+                tail = lNewNode;
+            }
+            else{
+                tail.setNext(lNewNode);
+                tail = lNewNode;
+            }
+        }  
+    }
+
+    public void dequeue() 
+    {
+        if (!this.isEmpty()){
+            head = head.next();
+        }
+    }
+
+    public Object front(){
+        if (this.isEmpty())
+        {
+            return null;
+        }
+        else{
+            return head.content();
+        }
     }
 }

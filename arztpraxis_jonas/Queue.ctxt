@@ -1,8 +1,12 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Queue()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Queue\r\n
-comment1.params=y
-comment1.target=int\ sampleMethod(int)
-comment1.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
-numComments=2
+comment1.params=
+comment1.target=boolean\ isEmpty()
+comment2.params=pObject
+comment2.target=void\ enqueue(java.lang.Object)
+comment3.params=
+comment3.target=void\ dequeue()
+comment4.params=
+comment4.target=java.lang.Object\ front()
+numComments=5
