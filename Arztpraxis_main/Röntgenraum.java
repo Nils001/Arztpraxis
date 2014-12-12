@@ -1,7 +1,7 @@
 
-public class Röntgenraum extends Raum
+public class RÃ¶ntgenraum extends Raum
 {
-    public Röntgenraum()
+    public RÃ¶ntgenraum()
     {
     }
 }

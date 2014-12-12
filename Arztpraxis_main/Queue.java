@@ -9,7 +9,8 @@ public class Queue
         private Node nextNode;
 
         public Node(Object pContent, Node pNext)
-        { content = pContent;
+        { 
+            content = pContent;
             nextNode = pNext;
         }
 

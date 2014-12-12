@@ -1,24 +1,20 @@
 
-/**
- * @Norbert Gutsche 
- * @version 22.02.12
- */
 public class Wartezimmer
 {
     private List liste;
-    private int plätze;
+    private int plÃ¤tze;
     private int sindBesetzt;
 
     public Wartezimmer(int a)
     {
         liste = new List();
-        plätze = a;
+        plÃ¤tze = a;
         sindBesetzt = 0;
     }
 
-    public void hinzufügen(Mensch a)
+    public void hinzufÃ¼gen(Mensch a)
     {
-        if (sindBesetzt < plätze)
+        if (sindBesetzt < plÃ¤tze)
         {
             if (liste.isEmpty())
             {
@@ -28,7 +24,7 @@ public class Wartezimmer
             else
             {
                 liste.toFirst();
-                while (a.isLess((Priorität)liste.getObject()))
+                while (a.isLess((PrioritÃ¤t)liste.getObject()))
                 {
                     if (liste.hasAccess())
                     {
@@ -46,23 +42,23 @@ public class Wartezimmer
         }
     }
 
-    public void löschen()
+    public void lÃ¶schen()
     {
         liste.toFirst();
         liste.remove();
         sindBesetzt = sindBesetzt - 1;
     }
 
-    public Priorität gibErsten()
+    public PrioritÃ¤t gibErsten()
     {
         liste.toFirst();
-        Priorität object = (Priorität)liste.getObject();
+        PrioritÃ¤t object = (PrioritÃ¤t)liste.getObject();
         return object;
     }
 
     public boolean platzFrei()
     {
-        if (sindBesetzt < plätze)
+        if (sindBesetzt < plÃ¤tze)
         {
             return true;
         }

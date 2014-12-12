@@ -1,10 +1,4 @@
 
-/**
- * Write a description of class Behandlungsraum here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Behandlungsraum extends Raum
 {
     private boolean hatArzt;
@@ -15,9 +9,9 @@ public class Behandlungsraum extends Raum
 
     }
 
-    private void mussRöntgen()
+    private void mussRÃ¶ntgen()
     {
-        patient.setBrauchRöntgen(true);
+        patient.setBrauchRÃ¶ntgen(true);
     }
 
     private void diagnoseStellen()
