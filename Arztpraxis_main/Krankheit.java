@@ -6,15 +6,13 @@ public class Krankheit
     private int priorität;
     private boolean brauchRöntgen;
     private Random r;
-    private int a;
-    private int b;
 
     public Krankheit()
     {
         this.brauchRöntgen = false;
         r = new Random();     
-        a = r.nextInt(4);
-        b = r.nextInt(5);
+       int a = r.nextInt(4);
+      int b = r.nextInt(5);
         if (a == 0)
         {
             this.priorität = 1;
