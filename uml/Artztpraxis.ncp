@@ -7,7 +7,7 @@
       <Entity type="Class">
         <Name>Raum_abstract</Name>
         <Access>Public</Access>
-        <Location left="1095" top="196" />
+        <Location left="1204" top="179" />
         <Size width="179" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">boolean besetzt</Member>
@@ -46,8 +46,8 @@
       <Entity type="Class">
         <Name>Priorität</Name>
         <Access>Public</Access>
-        <Location left="658" top="788" />
-        <Size width="162" height="77" />
+        <Location left="806" top="770" />
+        <Size width="162" height="94" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
       </Entity>
@@ -66,7 +66,7 @@
       <Entity type="Class">
         <Name>Familie</Name>
         <Access>Public</Access>
-        <Location left="433" top="777" />
+        <Location left="406" top="770" />
         <Size width="162" height="94" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">public Familie()</Member>
@@ -75,7 +75,7 @@
       <Entity type="Class">
         <Name>Wartezimmer</Name>
         <Access>Public</Access>
-        <Location left="842" top="486" />
+        <Location left="987" top="486" />
         <Size width="208" height="266" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int plätze</Member>
@@ -90,7 +90,7 @@
       <Entity type="Class">
         <Name>List</Name>
         <Access>Public</Access>
-        <Location left="922" top="788" />
+        <Location left="1011" top="788" />
         <Size width="162" height="77" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -98,7 +98,7 @@
       <Entity type="Class">
         <Name>Behandlungsraum</Name>
         <Access>Public</Access>
-        <Location left="1399" top="351" />
+        <Location left="1476" top="349" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">boolean hatArzt</Member>
@@ -111,7 +111,7 @@
       <Entity type="Class">
         <Name>Röntgenraum</Name>
         <Access>Public</Access>
-        <Location left="1399" top="69" />
+        <Location left="1476" top="69" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">public Röntgenraum()</Member>
@@ -156,30 +156,39 @@
         <Member type="Constructor">public Krankheit()</Member>
         <Modifier>None</Modifier>
       </Entity>
+      <Entity type="Class">
+        <Name>Opas</Name>
+        <Access>Public</Access>
+        <Location left="606" top="770" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Opas()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
     </Entities>
     <Relationships>
       <Relationship type="Generalization" first="5" second="1">
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>520</X>
-          <Y>752</Y>
+          <X>493</X>
+          <Y>745</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>520</X>
-          <Y>732</Y>
+          <X>493</X>
+          <Y>731</Y>
         </BendPoint>
       </Relationship>
       <Relationship type="Generalization" first="8" second="0">
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>1374</X>
-          <Y>417</Y>
+          <X>1451</X>
+          <Y>415</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>1306</X>
-          <Y>333</Y>
+          <X>1415</X>
+          <Y>316</Y>
         </BendPoint>
       </Relationship>
       <Relationship type="Generalization" first="9" second="0">
@@ -214,8 +223,8 @@
           <Y>205</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>456</X>
-          <Y>372</Y>
+          <X>472</X>
+          <Y>367</Y>
         </BendPoint>
       </Relationship>
       <Relationship type="Dependency" first="0" second="2">
@@ -240,11 +249,11 @@
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>1100</X>
-          <Y>618</Y>
+          <X>1243</X>
+          <Y>608</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>1129</X>
+          <X>1218</X>
           <Y>826</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
@@ -256,12 +265,12 @@
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>817</X>
+          <X>962</X>
           <Y>605</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>765</X>
-          <Y>763</Y>
+          <X>913</X>
+          <Y>745</Y>
         </BendPoint>
       </Relationship>
       <Relationship type="Generalization" first="1" second="3">
@@ -272,8 +281,8 @@
           <Y>605</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>714</X>
-          <Y>763</Y>
+          <X>862</X>
+          <Y>745</Y>
         </BendPoint>
       </Relationship>
       <Relationship type="Generalization" first="2" second="1">
@@ -302,8 +311,20 @@
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>817</X>
+          <X>962</X>
           <Y>575</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="13" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>653</X>
+          <Y>745</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>558</X>
+          <Y>727</Y>
         </BendPoint>
       </Relationship>
     </Relationships>
