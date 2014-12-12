@@ -14,8 +14,12 @@ public class Patient extends Mensch
         krankheitsstatus = null;
         brauchRöntgen = diagnose.getRöntgen();
     }
-    
-  
+
+    public Krankheit getKrankheit()
+    {
+        return diagnose;
+
+    }
 
     public void setKrankheitsstatus(String c)
     {

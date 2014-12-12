@@ -8,17 +8,25 @@ public abstract class Raum
     {
         patient = null;
     }
-    
+
     public void hinzufügen(Patient a)
     {
-        patient = a;
+        if (!istBesetzt())
+        {
+            patient = a;
+        }
     }
-    
-    public void löschen()
+
+    public Patient gibPatientUndLöschen()
     {
-        patient = null;
+        if(this.istBesetzt()){
+            Patient a = patient;
+            patient = null;
+            return a;
+        }
+        return null;
     }
-    
+
     public boolean istBesetzt()
     {
         if (patient == null)

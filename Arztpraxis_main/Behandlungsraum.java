@@ -9,6 +9,23 @@ public class Behandlungsraum extends Raum
 
     }
 
-  
-    
+    public void hinzufügen(Patient a)
+    {
+        if (!istBesetzt())
+        {
+            patient = a;
+            pDiagnose =  a.getKrankheit();
+        }
+
+    }
+
+    public void diagnostizieren()
+    {
+        if (istBesetzt())
+        {
+            patient.setKrankheitsstatus( pDiagnose.getDiagnose());
+
+        }
+
+    }
 }
