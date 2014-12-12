@@ -5,26 +5,26 @@ public abstract class Priorität
 
     public Priorität(int p)
     {
-        priorit�t = p;
+        priorität = p;
     }
 
     public int gibPriorität()
     {
-        return priorit�t;
+        return priorität;
     }
 
-    public boolean isGreater (Priorit�t pObject)
+    public boolean isGreater (Priorität pObject)
     {
-        return (priorit�t < pObject.priorit�t);
+        return (priorität < pObject.priorität);
     }
 
-    public boolean isLess (Priorit�t pObject)
+    public boolean isLess (Priorität pObject)
     {
-        return (priorit�t > pObject.priorit�t);
+        return (priorität > pObject.priorität);
     }
 
-    public boolean isEqual (Priorit�t pObject)
+    public boolean isEqual (Priorität pObject)
     {
-        return (priorit�t == pObject.priorit�t);
+        return (priorität == pObject.priorität);
     }
 }
