@@ -79,14 +79,16 @@ public class Krankheit
 
         }
     }
+
     public String gibDiagnose()
     {
-    return diagnose;
+        return diagnose;
     }
+
     public int gibPriorität ()
     {
-    return priorität;
-    
+        return priorität;
+
     }
 
 }
