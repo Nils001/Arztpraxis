@@ -7,43 +7,46 @@
       <Entity type="Class">
         <Name>Raum_abstract</Name>
         <Access>Public</Access>
-        <Location left="915" top="239" />
-        <Size width="162" height="216" />
+        <Location left="1095" top="196" />
+        <Size width="179" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">boolean besetzt</Member>
-        <Member type="Field">Patient a</Member>
-        <Member type="Method">public boolean istBesetzt()</Member>
-        <Member type="Method">public void hinzufügen(Patient b)</Member>
+        <Member type="Field">protected Patient patient</Member>
+        <Member type="Constructor">public Raum_abstract()</Member>
+        <Member type="Method">public void hinzufügen(Patient a)</Member>
         <Member type="Method">public void löschen()</Member>
+        <Member type="Method">public boolean istBesetzt()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Mensch_abstract</Name>
         <Access>Public</Access>
-        <Location left="519" top="482" />
+        <Location left="433" top="486" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">String name</Member>
+        <Member type="Constructor">public Mensch_abstract(int p)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Patient</Name>
         <Access>Public</Access>
-        <Location left="86" top="628" />
+        <Location left="62" top="701" />
         <Size width="264" height="225" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">Krankheit Diagnose</Member>
+        <Member type="Field">Krankheit diagnose</Member>
         <Member type="Field">String krankheitsstatus</Member>
         <Member type="Field">boolean brauchRöntgen</Member>
-        <Member type="Method">private void setDiagnose(String Diagnose)</Member>
+        <Member type="Constructor">public Patient(int p)</Member>
+        <Member type="Method">public void setDiagnose(Krankheit a)</Member>
         <Member type="Method">public void setBrauchRöntgen(boolean b)</Member>
-        <Member type="Method">public void setKrankheitsstatus()</Member>
+        <Member type="Method">public void setKrankheitsstatus(String c)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Priorität</Name>
         <Access>Public</Access>
-        <Location left="10" top="352" />
+        <Location left="658" top="788" />
         <Size width="162" height="77" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -51,41 +54,43 @@
       <Entity type="Class">
         <Name>Arzt</Name>
         <Access>Public</Access>
-        <Location left="10" top="126" />
-        <Size width="200" height="128" />
+        <Location left="88" top="100" />
+        <Size width="200" height="145" />
         <Collapsed>False</Collapsed>
         <Member type="Field">Raum woBinIch</Member>
-        <Member type="Method">public void setWoBinIch(Raum a)</Member>
-        <Member type="Method">public Raum woBinIch()</Member>
+        <Member type="Constructor">public Arzt()</Member>
+        <Member type="Method">public void setWo(Raum a)</Member>
+        <Member type="Method">public Raum getWo()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Familie</Name>
         <Access>Public</Access>
-        <Location left="548" top="788" />
-        <Size width="162" height="77" />
+        <Location left="433" top="777" />
+        <Size width="162" height="94" />
         <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Familie()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Wartezimmer</Name>
         <Access>Public</Access>
-        <Location left="1019" top="618" />
+        <Location left="842" top="486" />
         <Size width="208" height="266" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int plätze</Member>
         <Member type="Field">int sindBesetzt</Member>
-        <Member type="Method">public boolean platzFrei()</Member>
+        <Member type="Constructor">public Wartezimmer(int a)</Member>
         <Member type="Method">public void hinzufügen(Mensch a)</Member>
-        <Member type="Method">public void gibErsten()</Member>
-        <Member type="Method">public void löschen(Mensch a)</Member>
-        <Member type="Constructor">public Wartezimmer(int plätze)</Member>
+        <Member type="Method">public void löschen()</Member>
+        <Member type="Method">public Priorität gibErsten()</Member>
+        <Member type="Method">public boolean platzFrei()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>List</Name>
         <Access>Public</Access>
-        <Location left="1379" top="700" />
+        <Location left="922" top="788" />
         <Size width="162" height="77" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -93,10 +98,12 @@
       <Entity type="Class">
         <Name>Behandlungsraum</Name>
         <Access>Public</Access>
-        <Location left="1313" top="137" />
+        <Location left="1399" top="351" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">boolean hatArzt</Member>
+        <Member type="Field">private Krankheit pDiagnose</Member>
+        <Member type="Constructor">public Behandlungsraum()</Member>
         <Member type="Method">private void mussRöntgen()</Member>
         <Member type="Method">private void diagnoseStellen()</Member>
         <Modifier>None</Modifier>
@@ -104,20 +111,20 @@
       <Entity type="Class">
         <Name>Röntgenraum</Name>
         <Access>Public</Access>
-        <Location left="1367" top="447" />
+        <Location left="1399" top="69" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Method">private void Röntgen()</Member>
+        <Member type="Constructor">public Röntgenraum()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Rezeption</Name>
         <Access>Public</Access>
-        <Location left="436" top="69" />
+        <Location left="433" top="16" />
         <Size width="324" height="320" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int newField</Member>
-        <Member type="Method">public void Rezeption(int wartezimmer, int behandlungszimmer)</Member>
+        <Member type="Constructor">public Rezeption(int wartezimmer, int behandlungszimmer)</Member>
         <Member type="Method">public void neuerPatient()</Member>
         <Member type="Method">public void bewegeArzt()</Member>
         <Member type="Method">public void zuWartezimmer(Mensch a)</Member>
@@ -135,67 +142,45 @@
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>Randoms</Name>
-        <Access>Public</Access>
-        <Location left="795" top="533" />
-        <Size width="162" height="216" />
-        <Collapsed>False</Collapsed>
-        <Member type="Method">public String gibKrankheit()</Member>
-        <Modifier>None</Modifier>
-      </Entity>
-      <Entity type="Class">
         <Name>Krankheit</Name>
         <Access>Public</Access>
-        <Location left="735" top="846" />
-        <Size width="260" height="233" />
+        <Location left="51" top="343" />
+        <Size width="232" height="244" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">String diagnose</Member>
-        <Member type="Field">int priorität</Member>
+        <Member type="Field">String Diagnose</Member>
+        <Member type="Field">int Priorität</Member>
+        <Member type="Field">boolean brauchRöntgen</Member>
+        <Member type="Field">int a</Member>
+        <Member type="Field">int b</Member>
+        <Member type="Field">Random r</Member>
         <Member type="Constructor">public Krankheit()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
     <Relationships>
-      <Relationship type="Generalization" first="2" second="1">
-        <StartOrientation>Vertical</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-        <BendPoint relativeToStartShape="False">
-          <X>494</X>
-          <Y>592</Y>
-        </BendPoint>
-      </Relationship>
-      <Relationship type="Generalization" first="1" second="3">
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Vertical</EndOrientation>
-        <BendPoint relativeToStartShape="True">
-          <X>494</X>
-          <Y>519</Y>
-        </BendPoint>
-        <BendPoint relativeToStartShape="False">
-          <X>474</X>
-          <Y>519</Y>
-        </BendPoint>
-      </Relationship>
       <Relationship type="Generalization" first="5" second="1">
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
-        <BendPoint relativeToStartShape="False">
-          <X>650</X>
-          <Y>723</Y>
+        <BendPoint relativeToStartShape="True">
+          <X>520</X>
+          <Y>752</Y>
         </BendPoint>
-      </Relationship>
-      <Relationship type="Association" first="6" second="7">
-        <Label>Liste</Label>
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-        <StartMultiplicity>1</StartMultiplicity>
-        <EndMultiplicity>1</EndMultiplicity>
+        <BendPoint relativeToStartShape="False">
+          <X>520</X>
+          <Y>732</Y>
+        </BendPoint>
       </Relationship>
       <Relationship type="Generalization" first="8" second="0">
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1374</X>
+          <Y>417</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1306</X>
+          <Y>333</Y>
+        </BendPoint>
       </Relationship>
       <Relationship type="Generalization" first="9" second="0">
         <StartOrientation>Horizontal</StartOrientation>
@@ -219,6 +204,30 @@
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
+      <Relationship type="Dependency" first="4" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>322</X>
+          <Y>205</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>456</X>
+          <Y>372</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Dependency" first="0" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>577</X>
+          <Y>900</Y>
+        </BendPoint>
+      </Relationship>
       <Relationship type="Association" first="10" second="4">
         <Label>pArzt</Label>
         <StartOrientation>Horizontal</StartOrientation>
@@ -226,13 +235,76 @@
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Association" first="13" second="12">
+      <Relationship type="Association" first="6" second="7">
+        <Label>liste</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1100</X>
+          <Y>618</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1129</X>
+          <Y>826</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Dependency" first="6" second="3">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>817</X>
+          <Y>605</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>765</X>
+          <Y>763</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="1" second="3">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>622</X>
+          <Y>605</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>714</X>
+          <Y>763</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="2" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>354</X>
+          <Y>780</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Dependency" first="2" second="12">
         <Label>
         </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Dependency" first="8" second="12">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="6" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>817</X>
+          <Y>575</Y>
+        </BendPoint>
       </Relationship>
     </Relationships>
   </ProjectItem>
