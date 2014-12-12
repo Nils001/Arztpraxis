@@ -56,6 +56,16 @@ public class Wartezimmer
         return object;
     }
 
+    public boolean istBesetzt()
+
+    {
+        if(sindBesetzt !=0)
+        {
+            return true;
+        }else {return false; }
+
+    }
+
     public boolean platzFrei()
     {
         if (sindBesetzt < plätze)

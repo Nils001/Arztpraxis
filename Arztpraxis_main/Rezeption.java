@@ -47,22 +47,38 @@ public class Rezeption
         log = log + "Arzt geht zu Raum" +a+"\n";
     }
 
-    public void queueZuWartezimmer(Mensch a)
+    public void queueZuWartezimmer()
     {
+
         for(int i = 0;i<wartezimmer.length;i++){
             if (wartezimmer[i].platzFrei())
             {
                 wartezimmer[i].hinzufügen((Mensch)ankunft.front());
+                ankunft.dequeue();
                 log = log + "Patient in Wartezimmer " + i+ "hinzugefügt\n";
                 break;
             }
         }
     }
 
-    public void ZuBehandlungsraum(Patient a,Raum b)
+    public void wartezimmerZuBehandlungsraum()
     {
-        log = log + "Patient " + a+" wurde zu Raum "+b+ " hinzugefügt\n";
-        b.hinzufügen(a);
+        for(int i=0;i<wartezimmer.length;i++)
+        {
+            if(wartezimmer[i].istBesetzt())
+            {
+                for(int o = 0;o<behandlungszimmer.length;i++)
+                {
+                    if(!behandlungszimmer[i].istBesetzt())
+                    {
+                        behandlungszimmer[i].hinzufügen((Patient)wartezimmer[i].gibErsten());
+                        wartezimmer[i].löschen();
+
+                    }
+
+                }
+            }
+        }
     }
 
     public void behandlungeräumeLeeren()
@@ -73,13 +89,14 @@ public class Rezeption
             abgang.enqueue(a);
             if(a!=null)
             {
-                log = log + "Patient " + a + " wurde aus Behandlungszimmer " +i+ "geholt und der abgang Queue hinzugefügt\n";
+                log = log + "Patient  wurde aus Behandlungszimmer " +i+ "geholt und der abgang Queue hinzugefügt\n";
             }
         }
     }
+
     public void logAusgeben()
     {
-      System.out.println(log);
-    
+        System.out.println(log);
+
     }
 }
