@@ -1,0 +1,231 @@
+<Project>
+  <Name>Artztpraxis</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>!</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Raum_abstract</Name>
+        <Access>Public</Access>
+        <Location left="915" top="239" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">boolean besetzt</Member>
+        <Member type="Field">Patient a</Member>
+        <Member type="Method">public boolean istBesetzt()</Member>
+        <Member type="Method">public void hinzufügen(Patient b)</Member>
+        <Member type="Method">public void löschen()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Mensch_abstract</Name>
+        <Access>Public</Access>
+        <Location left="519" top="482" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">String name</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Patient</Name>
+        <Access>Public</Access>
+        <Location left="86" top="628" />
+        <Size width="264" height="225" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Krankheit Diagnose</Member>
+        <Member type="Field">String krankheitsstatus</Member>
+        <Member type="Field">boolean brauchRöntgen</Member>
+        <Member type="Method">private void setDiagnose(String Diagnose)</Member>
+        <Member type="Method">public void setBrauchRöntgen(boolean b)</Member>
+        <Member type="Method">public void setKrankheitsstatus()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Priorität</Name>
+        <Access>Public</Access>
+        <Location left="10" top="352" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Arzt</Name>
+        <Access>Public</Access>
+        <Location left="10" top="126" />
+        <Size width="200" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Raum woBinIch</Member>
+        <Member type="Method">public void setWoBinIch(Raum a)</Member>
+        <Member type="Method">public Raum woBinIch()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Familie</Name>
+        <Access>Public</Access>
+        <Location left="548" top="788" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Wartezimmer</Name>
+        <Access>Public</Access>
+        <Location left="1019" top="618" />
+        <Size width="208" height="266" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int plätze</Member>
+        <Member type="Field">int sindBesetzt</Member>
+        <Member type="Method">public boolean platzFrei()</Member>
+        <Member type="Method">public void hinzufügen(Mensch a)</Member>
+        <Member type="Method">public void gibErsten()</Member>
+        <Member type="Method">public void löschen(Mensch a)</Member>
+        <Member type="Constructor">public Wartezimmer(int plätze)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>List</Name>
+        <Access>Public</Access>
+        <Location left="1379" top="700" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Behandlungsraum</Name>
+        <Access>Public</Access>
+        <Location left="1313" top="137" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">boolean hatArzt</Member>
+        <Member type="Method">private void mussRöntgen()</Member>
+        <Member type="Method">private void diagnoseStellen()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Röntgenraum</Name>
+        <Access>Public</Access>
+        <Location left="1367" top="447" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">private void Röntgen()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Rezeption</Name>
+        <Access>Public</Access>
+        <Location left="436" top="69" />
+        <Size width="324" height="320" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int newField</Member>
+        <Member type="Method">public void Rezeption(int wartezimmer, int behandlungszimmer)</Member>
+        <Member type="Method">public void neuerPatient()</Member>
+        <Member type="Method">public void bewegeArzt()</Member>
+        <Member type="Method">public void zuWartezimmer(Mensch a)</Member>
+        <Member type="Method">public void zuBehandlungsraum(Mensch a)</Member>
+        <Member type="Method">public void vonZu(Mensch p, Raum a, Raum b)</Member>
+        <Member type="Method">public void nächsterSchritt()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Queue</Name>
+        <Access>Public</Access>
+        <Location left="1095" top="69" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Randoms</Name>
+        <Access>Public</Access>
+        <Location left="794" top="533" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public String gibKrankheit()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Krankheit</Name>
+        <Access>Public</Access>
+        <Location left="778" top="871" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">String Diagnose</Member>
+        <Member type="Field">int Priorität</Member>
+        <Member type="Constructor">public Krankheit(String Diagnose, int Priorität)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="2" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>494</X>
+          <Y>592</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="1" second="3">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>494</X>
+          <Y>519</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>474</X>
+          <Y>519</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="5" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>650</X>
+          <Y>723</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="6" second="7">
+        <Label>Liste</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Generalization" first="8" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="9" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="10" second="11">
+        <Label>Ankunft</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="10" second="11">
+        <Label>Abgang</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1068</X>
+          <Y>136</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="10" second="4">
+        <Label>pArzt</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
