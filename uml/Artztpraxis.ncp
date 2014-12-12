@@ -137,7 +137,7 @@
       <Entity type="Class">
         <Name>Randoms</Name>
         <Access>Public</Access>
-        <Location left="794" top="533" />
+        <Location left="795" top="533" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public String gibKrankheit()</Member>
@@ -146,12 +146,12 @@
       <Entity type="Class">
         <Name>Krankheit</Name>
         <Access>Public</Access>
-        <Location left="778" top="871" />
-        <Size width="162" height="216" />
+        <Location left="735" top="846" />
+        <Size width="260" height="233" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">String Diagnose</Member>
-        <Member type="Field">int Priorität</Member>
-        <Member type="Constructor">public Krankheit(String Diagnose, int Priorität)</Member>
+        <Member type="Field">String diagnose</Member>
+        <Member type="Field">int priorität</Member>
+        <Member type="Constructor">public Krankheit()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
@@ -223,6 +223,14 @@
         <Label>pArzt</Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="13" second="12">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
