@@ -129,17 +129,20 @@ public class Rezeption
 
     }
 
-
     public void simulation(int anzahl)
     {
-    for(int i = 0;i<anzahl;i++)
-    {
-        this.neuerPatient();
-    
-    }
-    
-    
-    }
+        for(int i = 0;i<anzahl;i++)
+        {
+            this.neuerPatient();
 
+        }
+        for(int i = 0;i<anzahl;i++)
+        {
+            this.queueZuWartezimmer();
+            this.wartezimmerZuBehandlungsraum();
+            
+        }
+        while()
+    }
 
 }
