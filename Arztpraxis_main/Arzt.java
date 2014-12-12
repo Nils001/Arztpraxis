@@ -7,19 +7,19 @@
  */
 public class Arzt
 {
-    private Raum woBinIch;
+    private int woBinIch;
     
     public Arzt()
     {
         
     }
     
-    public void setWo(Raum a)
+    public void setWo(int a)
     {
         woBinIch = a;
     }
     
-    public Raum getWo()
+    public int getWo()
     {
         return woBinIch;
     }

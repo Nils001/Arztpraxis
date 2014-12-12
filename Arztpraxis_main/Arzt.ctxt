@@ -2,7 +2,7 @@
 comment0.params=
 comment0.target=Arzt()
 comment1.params=a
-comment1.target=void\ setWo(Raum)
+comment1.target=void\ setWo(int)
 comment2.params=
-comment2.target=Raum\ getWo()
+comment2.target=int\ getWo()
 numComments=3

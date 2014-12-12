@@ -38,25 +38,54 @@ public class Rezeption
     {
         Patient a = new Patient();
         ankunft.enqueue(a);
-        log = log + "Patient in Queue Ankunft hinzugefügt \n";
+        log = log + "Patient in Queue Ankunft hinzugefügt  \n";
     }
 
-    public void bewegeArzt(Raum a)
+    public void bewegeArzt()
     {
-        pArzt.setWo(a);
-        log = log + "Arzt geht zu Raum" +a+"\n";
+
+        int a = pArzt.getWo();
+        int b=a;
+        log = log + "Arzt ist in Zimmer " +a+"\n" ;
+        behandlungszimmer[a].setArzt(false);
+        a++;
+        if (a < behandlungszimmer.length)
+        {
+            if(behandlungszimmer[a].istBesetzt())
+            {
+
+                pArzt.setWo(a);
+                behandlungszimmer[a].setArzt(true);
+                behandlungszimmer[a].diagnostizieren();
+                log = log + "Arzt geht von Zimmer " +b+" zu Zimmer " +a+ " und diagnostiziert " +behandlungszimmer[a].getpDiagnose().getDiagnose()+"\n"; 
+            }
+
+        }
+        else
+        {
+            a=0;
+            if(behandlungszimmer[a].istBesetzt())
+            {
+                pArzt.setWo(a);
+                behandlungszimmer[a].setArzt(true);
+                behandlungszimmer[a].diagnostizieren();
+                log = log + "Arzt geht von Zimmer " +b+" zu Zimmer " +a+ " und diagnostiziert " +behandlungszimmer[a].getpDiagnose().getDiagnose()+"\n"; 
+            }
+        }
+
     }
 
     public void queueZuWartezimmer()
     {
-
-        for(int i = 0;i<wartezimmer.length;i++){
-            if (wartezimmer[i].platzFrei())
-            {
-                wartezimmer[i].hinzufügen((Mensch)ankunft.front());
-                ankunft.dequeue();
-                log = log + "Patient in Wartezimmer " + i+ "hinzugefügt\n";
-                break;
+        if (!ankunft.isEmpty()){
+            for(int i = 0;i<wartezimmer.length;i++){
+                if (wartezimmer[i].platzFrei())
+                {
+                    wartezimmer[i].hinzufügen((Mensch)ankunft.front());
+                    ankunft.dequeue();
+                    log = log + "Patient in Wartezimmer " + i+ " hinzugefügt\n";
+                    break;
+                }
             }
         }
     }
@@ -73,7 +102,7 @@ public class Rezeption
                     {
                         behandlungszimmer[i].hinzufügen((Patient)wartezimmer[i].gibErsten());
                         wartezimmer[i].löschen();
-
+                        break;
                     }
 
                 }
@@ -99,4 +128,18 @@ public class Rezeption
         System.out.println(log);
 
     }
+
+
+    public void simulation(int anzahl)
+    {
+    for(int i = 0;i<anzahl;i++)
+    {
+        this.neuerPatient();
+    
+    }
+    
+    
+    }
+
+
 }
