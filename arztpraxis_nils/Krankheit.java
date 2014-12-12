@@ -9,7 +9,7 @@ public class Krankheit
 {
     // instance variables - replace the example below with your own
     private String diagnose;
-    private int Priorität;
+    private int priorität;
     private Random r;
     private int a;
     /**
@@ -23,7 +23,7 @@ public class Krankheit
         {
             case 0: 
             this.diagnose = "";
-            this.Priorität =1 ;
+            this.priorität =1 ;
 
             break;
             case 1: kartenwert = "bauer";
@@ -79,7 +79,14 @@ public class Krankheit
 
         }
     }
-
-   
+    public String gibDiagnose()
+    {
+    return diagnose;
+    }
+    public int gibPriorität ()
+    {
+    return priorität;
+    
+    }
 
 }
