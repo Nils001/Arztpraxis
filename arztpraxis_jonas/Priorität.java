@@ -1,33 +1,30 @@
 
-/**
- * Write a description of class Priorität here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Priorität
+public abstract class Priorität
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private int priorität;    
 
-    /**
-     * Constructor for objects of class Priorität
-     */
-    public Priorität()
+    public Priorität(int p)
     {
-        // initialise instance variables
-        x = 0;
+        priorität = p;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    public int gibPriorität()
     {
-        // put your code here
-        return x + y;
+        return priorität;
+    }
+
+    public boolean isGreater (Priorität pObject)
+    {
+        return (priorität < pObject.priorität);
+    }
+
+    public boolean isLess (Priorität pObject)
+    {
+        return (priorität > pObject.priorität);
+    }
+
+    public boolean isEqual (Priorität pObject)
+    {
+        return (priorität == pObject.priorität);
     }
 }

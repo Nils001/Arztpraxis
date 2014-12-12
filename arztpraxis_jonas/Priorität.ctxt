@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=p
+comment0.target=Priorit\u00E4t(int)
+comment1.params=
+comment1.target=int\ gibPriorit\u00E4t()
+comment2.params=pObject
+comment2.target=boolean\ isGreater(Priorit\u00E4t)
+comment3.params=pObject
+comment3.target=boolean\ isLess(Priorit\u00E4t)
+comment4.params=pObject
+comment4.target=boolean\ isEqual(Priorit\u00E4t)
+numComments=5

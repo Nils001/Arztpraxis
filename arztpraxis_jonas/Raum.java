@@ -2,26 +2,26 @@
 public abstract class Raum
 {
     private boolean besetzt;
-    private Patient a;    
+    protected Patient patient;    
 
-    public int Raum()
+    public Raum()
     {
-        a = null;
+        patient = null;
     }
     
-    public void hinzufügen(Patient b)
+    public void hinzufügen(Patient a)
     {
-        a = b;
+        patient = a;
     }
     
     public void löschen()
     {
-        a = null;
+        patient = null;
     }
     
     public boolean istBesetzt()
     {
-        if (a = null)
+        if (patient == null)
         {
             return false;
         }

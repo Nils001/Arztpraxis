@@ -20,7 +20,7 @@
       <Entity type="Class">
         <Name>Mensch_abstract</Name>
         <Access>Public</Access>
-        <Location left="519" top="482" />
+        <Location left="376" top="440" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">String name</Member>
@@ -55,14 +55,14 @@
         <Size width="200" height="128" />
         <Collapsed>False</Collapsed>
         <Member type="Field">Raum woBinIch</Member>
-        <Member type="Method">public void setWoBinIch(Raum a)</Member>
-        <Member type="Method">public Raum woBinIch()</Member>
+        <Member type="Method">public void setWo(Raum a)</Member>
+        <Member type="Method">public Raum getWo()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Familie</Name>
         <Access>Public</Access>
-        <Location left="548" top="788" />
+        <Location left="421" top="776" />
         <Size width="162" height="77" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -137,7 +137,7 @@
       <Entity type="Class">
         <Name>Randoms</Name>
         <Access>Public</Access>
-        <Location left="794" top="533" />
+        <Location left="824" top="534" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public String gibKrankheit()</Member>
@@ -146,7 +146,7 @@
       <Entity type="Class">
         <Name>Krankheit</Name>
         <Access>Public</Access>
-        <Location left="778" top="871" />
+        <Location left="609" top="534" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">String Diagnose</Member>
@@ -160,16 +160,16 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="False">
-          <X>494</X>
-          <Y>592</Y>
+          <X>351</X>
+          <Y>550</Y>
         </BendPoint>
       </Relationship>
       <Relationship type="Generalization" first="1" second="3">
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>494</X>
-          <Y>519</Y>
+          <X>351</X>
+          <Y>477</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
           <X>474</X>
@@ -180,8 +180,8 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
-          <X>650</X>
-          <Y>723</Y>
+          <X>507</X>
+          <Y>681</Y>
         </BendPoint>
       </Relationship>
       <Relationship type="Association" first="6" second="7">

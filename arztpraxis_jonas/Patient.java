@@ -1,33 +1,30 @@
 
-/**
- * Write a description of class Patient here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Patient extends Mensch
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private Krankheit diagnose;
+    private String krankheitsstatus;
+    private boolean brauchRöntgen;
 
-    /**
-     * Constructor for objects of class Patient
-     */
-    public Patient()
+    public Patient(int p)
     {
-        // initialise instance variables
-        x = 0;
+        super(p);
+        diagnose = null;
+        krankheitsstatus = null;
+        brauchRöntgen = false;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    public void setDiagnose (Krankheit a)
     {
-        // put your code here
-        return x + y;
+        diagnose = a;
+    }
+
+    public void setBrauchRöntgen(boolean b)
+    {
+        brauchRöntgen = b;
+    }
+
+    public void setKrankheitsstatus(String c)
+    {
+        krankheitsstatus = c;
     }
 }
