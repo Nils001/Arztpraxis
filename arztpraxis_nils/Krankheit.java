@@ -4,10 +4,7 @@ public class Krankheit
 {
     private String diagnose;
     private int priorität;
-<<<<<<< HEAD
     private boolean brauchRöntgen;
-=======
->>>>>>> origin/master
     private Random r;
     private int a;
     private int b;
@@ -20,10 +17,9 @@ public class Krankheit
         b = r.nextInt(5);
         if (a == 0)
         {
-<<<<<<< HEAD
             this.priorität = 1;
             switch(b)
-            {
+            {		
                 case 0:
                 this.diagnose = "Bruch";
                 this.brauchRöntgen = true;
@@ -40,64 +36,7 @@ public class Krankheit
 
                 case 3:
                 this.diagnose = "Bewusstlos";
-                break;
-=======
-            case 0: 
-            this.diagnose = "";
-            this.priorität =1 ;
-
-            break;
-            case 1: kartenwert = "bauer";
-            break;
-            case 2: kartenwert = "dame";
-            break;
-            case 3: kartenwert = "koenig";
-            break;
-            case 4: kartenwert = "2";
-            break;
-            case 5: kartenwert = "3";
-            break;
-            case 6: kartenwert = "4";
-            break;
-            case 7: kartenwert = "5";
-            break;
-            case 8: kartenwert = "6";
-            break;
-            case 9: kartenwert = "7";
-            break;
-            case 10: kartenwert = "8";
-            break;
-            case 11: kartenwert = "9";
-            break;
-            case 12: kartenwert = "10";
-            break;                 
-            case 0: kartenwert = "ass";
-            break;
-            case 1: kartenwert = "bauer";
-            break;
-            case 2: kartenwert = "dame";
-            break;
-            case 3: kartenwert = "koenig";
-            break;
-            case 4: kartenwert = "2";
-            break;
-            case 5: kartenwert = "3";
-            break;
-            case 6: kartenwert = "4";
-            break;
-            case 7: kartenwert = "5";
-            break;
-            case 8: kartenwert = "6";
-            break;
-            case 9: kartenwert = "7";
-            break;
-            case 10: kartenwert = "8";
-            break;
-            case 11: kartenwert = "9";
-            break;
-            case 12: kartenwert = "10";
-            break;                 
->>>>>>> origin/master
+                break;               
 
                 case 4:
                 this.diagnose = "Schlaganfall";
@@ -161,22 +100,9 @@ public class Krankheit
                 this.diagnose = "Pocken";
                 break;
 
-<<<<<<< HEAD
                 case 4:
                 this.diagnose = "Gelbfieber";
                 break;
-=======
-    public String gibDiagnose()
-    {
-        return diagnose;
-    }
-
-    public int gibPriorität ()
-    {
-        return priorität;
-
-    }
->>>>>>> origin/master
 
                 case 5:
                 this.diagnose = "Cholera";
@@ -240,9 +166,8 @@ public class Krankheit
 
                 case 5:
                 this.diagnose = "Migräne";
-                break;
+                break;                        
             }
         }
     }
 }
-
