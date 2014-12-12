@@ -1,10 +1,6 @@
 #BlueJ class context
-comment0.params=p
-comment0.target=Patient(int)
-comment1.params=a
-comment1.target=void\ setDiagnose(Krankheit)
-comment2.params=b
-comment2.target=void\ setBrauchR\u00F6ntgen(boolean)
-comment3.params=c
-comment3.target=void\ setKrankheitsstatus(java.lang.String)
-numComments=4
+comment0.params=
+comment0.target=Patient()
+comment1.params=c
+comment1.target=void\ setKrankheitsstatus(java.lang.String)
+numComments=2

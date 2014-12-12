@@ -19,7 +19,7 @@ public class Krankheit
         {
             this.priorität = 1;
             switch(b)
-            {		
+            {       
                 case 0:
                 this.diagnose = "Bruch";
                 this.brauchRöntgen = true;
@@ -170,4 +170,18 @@ public class Krankheit
             }
         }
     }
+
+    public String getDiagnose()
+    {
+        return diagnose;
+    }
+    public int getPrioritaet()
+    {
+        return priorität;
+    }
+    public boolean getRöntgen()
+    {
+        return brauchRöntgen;
+    }
+
 }

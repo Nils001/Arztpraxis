@@ -27,4 +27,9 @@ public abstract class Priorität
     {
         return (priorität == pObject.priorität);
     }
+    public void setPriorität(int p)
+    {
+    priorität = p;
+    }
+
 }

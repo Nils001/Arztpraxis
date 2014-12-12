@@ -7,27 +7,40 @@
  */
 public class Rezeption
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    private String log;
+    private Arzt pArzt;
+    private Wartezimmer wartezimmer[];
     /**
      * Constructor for objects of class Rezeption
      */
-    public Rezeption()
+    public Rezeption(int wartezimmera,int behandlungszimmer,int wartezimmerplätze)
     {
-        // initialise instance variables
-        x = 0;
+        wartezimmer =new Wartezimmer[wartezimmera];
+        for(int i = 0;i< wartezimmera;i++){
+
+            wartezimmer[i] = new Wartezimmer(wartezimmerplätze);
+
+        }
+
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    public void neuerPatient()
     {
-        // put your code here
-        return x + y;
+        Patient a = new Patient();
+        for(int i = 0;i<wartezimmer.length;i++){
+            if (wartezimmer[i].platzFrei())
+            {
+                wartezimmer[i].hinzufügen(a);
+                log = log + "Neuer Patient in Wartezimmer " + i+ "hinzugefügt";
+                break;
+            }
+        }
+
+    }
+
+    public void bewegeArzt(Raum a)
+    {
+        pArzt.setWo(a);
+
     }
 }

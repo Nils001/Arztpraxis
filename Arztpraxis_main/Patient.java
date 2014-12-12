@@ -5,23 +5,17 @@ public class Patient extends Mensch
     private String krankheitsstatus;
     private boolean brauchRöntgen;
 
-    public Patient(int p)
+    public Patient()
     {
-        super(p);
-        diagnose = null;
+        super(1);
+        diagnose = new Krankheit();
+
+        this.setPriorität(diagnose.getPrioritaet());
         krankheitsstatus = null;
-        brauchRöntgen = false;
+        brauchRöntgen = diagnose.getRöntgen();
     }
-
-    public void setDiagnose (Krankheit a)
-    {
-        diagnose = a;
-    }
-
-    public void setBrauchRöntgen(boolean b)
-    {
-        brauchRöntgen = b;
-    }
+    
+  
 
     public void setKrankheitsstatus(String c)
     {

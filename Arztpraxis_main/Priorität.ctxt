@@ -9,4 +9,6 @@ comment3.params=pObject
 comment3.target=boolean\ isLess(Priorit\u00E4t)
 comment4.params=pObject
 comment4.target=boolean\ isEqual(Priorit\u00E4t)
-numComments=5
+comment5.params=p
+comment5.target=void\ setPriorit\u00E4t(int)
+numComments=6
