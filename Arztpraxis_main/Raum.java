@@ -19,7 +19,7 @@ public abstract class Raum
 
     public Patient gibPatientUndLöschen()
     {
-        if(this.istBesetzt()){
+        if(this.istBesetzt()&&patient.getKrankheitsstatus() != null){
             Patient a = patient;
             patient = null;
             return a;

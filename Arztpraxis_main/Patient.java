@@ -25,4 +25,11 @@ public class Patient extends Mensch
     {
         krankheitsstatus = c;
     }
+
+    public String getKrankheitsstatus()
+    {
+        return krankheitsstatus;
+
+    }
+
 }

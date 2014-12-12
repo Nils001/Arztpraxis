@@ -24,7 +24,8 @@ public class Behandlungsraum extends Raum
         if (istBesetzt())
         {
             patient.setKrankheitsstatus( pDiagnose.getDiagnose());
-
+            
+           
         }
 
     }

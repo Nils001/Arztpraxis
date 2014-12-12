@@ -64,6 +64,22 @@ public class Rezeption
         log = log + "Patient " + a+" wurde zu Raum "+b+ " hinzugefügt\n";
         b.hinzufügen(a);
     }
-    
 
+    public void behandlungeräumeLeeren()
+    {
+        for (int i = 0;i<behandlungszimmer.length;i++)
+        {
+            Patient a = behandlungszimmer[i].gibPatientUndLöschen();
+            abgang.enqueue(a);
+            if(a!=null)
+            {
+                log = log + "Patient " + a + " wurde aus Behandlungszimmer " +i+ "geholt und der abgang Queue hinzugefügt\n";
+            }
+        }
+    }
+    public void logAusgeben()
+    {
+      System.out.println(log);
+    
+    }
 }

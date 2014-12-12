@@ -5,4 +5,6 @@ comment1.params=
 comment1.target=Krankheit\ getKrankheit()
 comment2.params=c
 comment2.target=void\ setKrankheitsstatus(java.lang.String)
-numComments=3
+comment3.params=
+comment3.target=java.lang.String\ getKrankheitsstatus()
+numComments=4
