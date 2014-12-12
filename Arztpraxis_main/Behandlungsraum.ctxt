@@ -1,8 +1,4 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Behandlungsraum()
-comment1.params=
-comment1.target=void\ mussR\u00F6ntgen()
-comment2.params=
-comment2.target=void\ diagnoseStellen()
-numComments=3
+numComments=1

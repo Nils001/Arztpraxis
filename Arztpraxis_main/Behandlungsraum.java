@@ -9,13 +9,6 @@ public class Behandlungsraum extends Raum
 
     }
 
-    private void mussRöntgen()
-    {
-        patient.setBrauchRöntgen(true);
-    }
-
-    private void diagnoseStellen()
-    {
-        patient.setDiagnose(pDiagnose);
-    }
+  
+    
 }
