@@ -8,6 +8,7 @@
 public class Behandlungsraum extends Raum
 {
     private boolean hatArzt;
+    private Krankheit pDiagnose;
 
     public Behandlungsraum()
     {
@@ -16,11 +17,11 @@ public class Behandlungsraum extends Raum
 
     private void mussRöntgen()
     {
-        a.brauchRöntgen = true;
+        patient.setBrauchRöntgen(true);
     }
 
     private void diagnoseStellen()
     {
-        a.setDiagnose();
+        patient.setDiagnose(pDiagnose);
     }
 }

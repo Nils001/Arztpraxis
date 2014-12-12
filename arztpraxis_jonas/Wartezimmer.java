@@ -28,7 +28,7 @@ public class Wartezimmer
             else
             {
                 liste.toFirst();
-                while (a.isLess((Prioritaet)liste.getObject()))
+                while (a.isLess((Priorität)liste.getObject()))
                 {
                     if (liste.hasAccess())
                     {
@@ -53,10 +53,10 @@ public class Wartezimmer
         sindBesetzt = sindBesetzt - 1;
     }
 
-    public void gibErsten()
+    public Priorität gibErsten()
     {
         liste.toFirst();
-        Prioritaet object = (Prioritaet)liste.getObject();
+        Priorität object = (Priorität)liste.getObject();
         return object;
     }
 

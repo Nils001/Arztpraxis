@@ -1,6 +1,12 @@
 #BlueJ class context
-comment0.params=p\ pString
-comment0.target=Wartezimmer(int,\ java.lang.String)
-comment1.params=
-comment1.target=java.lang.String\ toString()
-numComments=2
+comment0.params=a
+comment0.target=Wartezimmer(int)
+comment1.params=a
+comment1.target=void\ hinzuf\u00FCgen(Mensch)
+comment2.params=
+comment2.target=void\ l\u00F6schen()
+comment3.params=
+comment3.target=Priorit\u00E4t\ gibErsten()
+comment4.params=
+comment4.target=boolean\ platzFrei()
+numComments=5
