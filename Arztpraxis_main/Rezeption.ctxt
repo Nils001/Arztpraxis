@@ -9,5 +9,5 @@ comment2.target=void\ bewegeArzt(Raum)
 comment3.params=a
 comment3.target=void\ queueZuWartezimmer(Mensch)
 comment4.params=a\ b
-comment4.target=void\ ZuBehandlungsraum(Mensch,\ Raum)
+comment4.target=void\ ZuBehandlungsraum(Patient,\ Raum)
 numComments=5

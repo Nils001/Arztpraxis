@@ -27,7 +27,11 @@ public class Rezeption
             wartezimmer[i] = new Wartezimmer(wartezimmerplätze);
 
         }
+        for (int i = 0;i<behandlungszimmera;i++)
+        {
+            behandlungszimmer[i]= new Behandlungsraum();
 
+        }
     }
 
     public void neuerPatient()
@@ -54,9 +58,12 @@ public class Rezeption
             }
         }
     }
-    public void ZuBehandlungsraum(Mensch a,Raum b)
+
+    public void ZuBehandlungsraum(Patient a,Raum b)
     {
-    
-    
+        log = log + "Patient " + a+" wurde zu Raum "+b+ " hinzugefügt\n";
+        b.hinzufügen(a);
     }
+    
+
 }
