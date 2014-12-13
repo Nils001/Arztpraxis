@@ -1,7 +1,7 @@
 
 public abstract class Priorität
 {
-    private int priorität;    
+    protected int priorität;    
 
     public Priorität(int p)
     {
@@ -27,9 +27,10 @@ public abstract class Priorität
     {
         return (priorität == pObject.priorität);
     }
+
     public void setPriorität(int p)
     {
-    priorität = p;
+            priorität = p;
     }
 
 }

@@ -16,24 +16,23 @@ public class Behandlungsraum extends Raum
             patient = a;
             pDiagnose =  a.getKrankheit();
         }
-
     }
 
     public void diagnostizieren()
     {
         if (istBesetzt()&& hatArzt)
         {
-            patient.setKrankheitsstatus("Behandelt" );
-
+            patient.setKrankheitsstatus("Behandelt");
         }
     }
+
     public void setArzt(boolean a)
     {
         hatArzt = a;
-
     }
+
     public Krankheit getpDiagnose()
     {
-    return pDiagnose;
+        return pDiagnose;
     }
 }

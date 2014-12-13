@@ -173,10 +173,12 @@ public class Krankheit
     {
         return diagnose;
     }
-    public int getPrioritaet()
+    
+    public int getPriorität()
     {
         return priorität;
     }
+    
     public boolean getRöntgen()
     {
         return brauchRöntgen;

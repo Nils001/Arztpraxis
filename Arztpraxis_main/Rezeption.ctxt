@@ -1,7 +1,6 @@
 #BlueJ class context
 comment0.params=wartezimmera\ behandlungszimmera\ wartezimmerpl\u00E4tze
 comment0.target=Rezeption(int,\ int,\ int)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Rezeption\r\n
 comment1.params=
 comment1.target=void\ neuerPatient()
 comment2.params=

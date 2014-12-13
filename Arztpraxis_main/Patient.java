@@ -1,24 +1,35 @@
 
 public class Patient extends Mensch
 {
-    private Krankheit diagnose;
+    private Krankheit hilfe;
     private String krankheitsstatus;
+    private String diagnose;
     private boolean brauchRöntgen;
 
     public Patient()
     {
         super(1);
-        diagnose = new Krankheit();
-
-        this.setPriorität(diagnose.getPrioritaet());
+        hilfe = new Krankheit();
+        diagnose = hilfe.getDiagnose();
+        priorität = hilfe.getPriorität();
         krankheitsstatus = null;
-        brauchRöntgen = diagnose.getRöntgen();
+        brauchRöntgen = hilfe.getRöntgen();
     }
 
     public Krankheit getKrankheit()
     {
-        return diagnose;
+        return hilfe;
 
+    }
+    
+    public String getDiagnose()
+    {
+        return diagnose;
+    }
+    
+        public int getPriorität()
+    {
+        return priorität;
     }
 
     public void setKrankheitsstatus(String c)
@@ -29,7 +40,6 @@ public class Patient extends Mensch
     public String getKrankheitsstatus()
     {
         return krankheitsstatus;
-
     }
 
 }

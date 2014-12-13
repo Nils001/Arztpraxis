@@ -17,14 +17,14 @@ public abstract class Raum
         }
     }
 
-    public Patient gibPatientUndLöschen()
+    public void löschen()
     {
-        if(this.istBesetzt()&&patient.getKrankheitsstatus() != null){
-            Patient a = patient;
             patient = null;
-            return a;
-        }
-        return null;
+    }
+    
+    public Patient getPatient()
+    {
+        return patient;
     }
 
     public boolean istBesetzt()

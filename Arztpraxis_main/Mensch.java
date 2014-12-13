@@ -13,4 +13,14 @@ public abstract class Mensch extends Priorität
     {
         super(p);
     }
+    
+    public void setName(String pName)
+    {
+        name = pName;
+    }
+    
+    public String getName()
+    {
+        return name;
+    }
 }

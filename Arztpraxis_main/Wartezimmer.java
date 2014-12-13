@@ -12,7 +12,7 @@ public class Wartezimmer
         sindBesetzt = 0;
     }
 
-    public void hinzufügen(Mensch a)
+    public void hinzufügen(Priorität a)
     {
         if (sindBesetzt < plätze)
         {
@@ -24,19 +24,19 @@ public class Wartezimmer
             else
             {
                 liste.toFirst();
-                /*while (a.isLess((Priorität)liste.getObject()))
+                while (a.isLess((Priorität)liste.getObject()))
                 {
-                if (liste.hasAccess())
-                {
-                liste.next();
+                    if (liste.hasAccess())
+                    {
+                        liste.next();
+                    }
+                    else
+                    {
+                        liste.append(a);
+                        sindBesetzt = sindBesetzt + 1;
+                        break;
+                    }
                 }
-                else
-                {
-                liste.append(a);
-                sindBesetzt = sindBesetzt + 1;
-                break;
-                }
-                }*/ 
                 liste.insert(a);
                 sindBesetzt = sindBesetzt + 1;
             }
@@ -63,11 +63,34 @@ public class Wartezimmer
     public boolean istBesetzt()
 
     {
-        if(sindBesetzt !=0)
+        if(sindBesetzt != 0)
         {
             return true;
-        }else {return false; }
+        }
+        else {
+            return false; 
+        }
 
+    }
+
+    public void ausgabe()
+    {
+        if (!liste.isEmpty())
+        {
+            liste.toFirst();
+            while (liste.hasAccess())
+            {
+                String krankheit = ((Patient)liste.getObject()).getDiagnose();
+
+                int i = ((Patient)liste.getObject()).getPriorität();
+                Integer meinInteger = new Integer(i);
+                String priorität = meinInteger.toString(); 
+
+                System.out.println(priorität+ " " +krankheit);
+
+                liste.next();
+            }
+        }
     }
 
     public boolean platzFrei()
@@ -81,5 +104,4 @@ public class Wartezimmer
             return false;
         }
     }
-
 }
