@@ -3,29 +3,29 @@ import java.util.Random;
 public class Krankheit
 {
     private String diagnose;
-    private int priorität;
-    private boolean brauchRöntgen;
+    private int prioritaet;
+    private boolean brauchRoentgen;
     private Random r;
 
     public Krankheit()
     {
-        this.brauchRöntgen = false;
+        this.brauchRoentgen = false;
         r = new Random();     
        int a = r.nextInt(4);
       int b = r.nextInt(5);
         if (a == 0)
         {
-            this.priorität = 1;
+            this.prioritaet = 1;
             switch(b)
             {       
                 case 0:
                 this.diagnose = "Bruch";
-                this.brauchRöntgen = true;
+                this.brauchRoentgen = true;
                 break;
 
                 case 1:
                 this.diagnose = "Ab";
-                this.brauchRöntgen = true;
+                this.brauchRoentgen = true;
                 break;
 
                 case 2:
@@ -47,7 +47,7 @@ public class Krankheit
         }
         else if (a == 1)
         {
-            this.priorität = 2;
+            this.prioritaet = 2;
             switch(b)
             {
                 case 0:
@@ -68,18 +68,18 @@ public class Krankheit
 
                 case 4:
                 this.diagnose = "Quetschung";
-                this.brauchRöntgen = true;
+                this.brauchRoentgen = true;
                 break;
 
                 case 5:
                 this.diagnose = "Ausgekugelt";
-                this.brauchRöntgen = true;
+                this.brauchRoentgen = true;
                 break;
             }
         }
         else if (a == 2)
         {
-            this.priorität = 3;
+            this.prioritaet = 3;
             switch(b)
             {
                 case 0:
@@ -109,7 +109,7 @@ public class Krankheit
         }
         else if (a == 3)
         {
-            this.priorität = 4;
+            this.prioritaet = 4;
             switch(b)
             {
                 case 0:
@@ -139,7 +139,7 @@ public class Krankheit
         }
         else if (a == 4)
         {
-            this.priorität = 5;
+            this.prioritaet = 5;
             switch(b)
             {
                 case 0:
@@ -147,7 +147,7 @@ public class Krankheit
                 break;
 
                 case 1:
-                this.diagnose = "Erkältung";
+                this.diagnose = "Erkaeltung";
                 break;
 
                 case 2:
@@ -159,11 +159,11 @@ public class Krankheit
                 break;
 
                 case 4:
-                this.diagnose = "Erektionsstörungen";
+                this.diagnose = "Erektionsstoerungen";
                 break;
 
                 case 5:
-                this.diagnose = "Migräne";
+                this.diagnose = "Migraene";
                 break;                        
             }
         }
@@ -174,14 +174,14 @@ public class Krankheit
         return diagnose;
     }
     
-    public int getPriorität()
+    public int getPrioritaet()
     {
-        return priorität;
+        return prioritaet;
     }
     
-    public boolean getRöntgen()
+    public boolean getRoentgen()
     {
-        return brauchRöntgen;
+        return brauchRoentgen;
     }
 
 }

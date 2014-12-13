@@ -2,19 +2,19 @@
 public class Wartezimmer
 {
     private List liste;
-    private int plätze;
+    private int plaetze;
     private int sindBesetzt;
 
     public Wartezimmer(int a)
     {
         liste = new List();
-        plätze = a;
+        plaetze = a;
         sindBesetzt = 0;
     }
 
-    public void hinzufügen(Priorität a)
+    public void hinzufuegen(Prioritaet a)
     {
-        if (sindBesetzt < plätze)
+        if (sindBesetzt < plaetze)
         {
             if (liste.isEmpty())
             {
@@ -24,7 +24,7 @@ public class Wartezimmer
             else
             {
                 liste.toFirst();
-                while (a.isLess((Priorität)liste.getObject()))
+                while (a.isLess((Prioritaet)liste.getObject()))
                 {
                     if (liste.hasAccess())
                     {
@@ -43,7 +43,7 @@ public class Wartezimmer
         }
     }
 
-    public void löschen()
+    public void loeschen()
     {
         if (!liste.isEmpty())
         {
@@ -53,10 +53,10 @@ public class Wartezimmer
         }
     }
 
-    public Priorität gibErsten()
+    public Prioritaet gibErsten()
     {
         liste.toFirst();
-        Priorität object = (Priorität)liste.getObject();
+        Prioritaet object = (Prioritaet)liste.getObject();
         return object;
     }
 
@@ -82,11 +82,11 @@ public class Wartezimmer
             {
                 String krankheit = ((Patient)liste.getObject()).getDiagnose();
 
-                int i = ((Patient)liste.getObject()).getPriorität();
+                int i = ((Patient)liste.getObject()).getPrioritaet();
                 Integer meinInteger = new Integer(i);
-                String priorität = meinInteger.toString(); 
+                String prioritaet = meinInteger.toString(); 
 
-                System.out.println(priorität+ " " +krankheit);
+                System.out.println(prioritaet+ " " +krankheit);
 
                 liste.next();
             }
@@ -95,7 +95,7 @@ public class Wartezimmer
 
     public boolean platzFrei()
     {
-        if (sindBesetzt < plätze)
+        if (sindBesetzt < plaetze)
         {
             return true;
         }

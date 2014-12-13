@@ -4,16 +4,16 @@ public class Patient extends Mensch
     private Krankheit hilfe;
     private String krankheitsstatus;
     private String diagnose;
-    private boolean brauchRöntgen;
+    private boolean brauchRoentgen;
 
     public Patient()
     {
         super(1);
         hilfe = new Krankheit();
         diagnose = hilfe.getDiagnose();
-        priorität = hilfe.getPriorität();
+        prioritaet = hilfe.getPrioritaet();
         krankheitsstatus = null;
-        brauchRöntgen = hilfe.getRöntgen();
+        brauchRoentgen = hilfe.getRoentgen();
     }
 
     public Krankheit getKrankheit()
@@ -27,9 +27,9 @@ public class Patient extends Mensch
         return diagnose;
     }
     
-        public int getPriorität()
+        public int getPrioritaet()
     {
-        return priorität;
+        return prioritaet;
     }
 
     public void setKrankheitsstatus(String c)

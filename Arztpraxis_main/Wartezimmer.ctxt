@@ -2,11 +2,11 @@
 comment0.params=a
 comment0.target=Wartezimmer(int)
 comment1.params=a
-comment1.target=void\ hinzuf\u00FCgen(Priorit\u00E4t)
+comment1.target=void\ hinzufuegen(Prioritaet)
 comment2.params=
-comment2.target=void\ l\u00F6schen()
+comment2.target=void\ loeschen()
 comment3.params=
-comment3.target=Priorit\u00E4t\ gibErsten()
+comment3.target=Prioritaet\ gibErsten()
 comment4.params=
 comment4.target=boolean\ istBesetzt()
 comment5.params=

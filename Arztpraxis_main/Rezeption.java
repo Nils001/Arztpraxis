@@ -8,7 +8,7 @@ public class Rezeption
     private Queue ankunft;
     private Queue abgang;
 
-    public Rezeption(int wartezimmera,int behandlungszimmera,int wartezimmerplätze)
+    public Rezeption(int wartezimmera,int behandlungszimmera,int wartezimmerplaetze)
     {
         ankunft = new Queue();
         abgang = new Queue();
@@ -19,7 +19,7 @@ public class Rezeption
 
         for(int i = 0;i< wartezimmera;i++)
         {
-            wartezimmer[i] = new Wartezimmer(wartezimmerplätze);
+            wartezimmer[i] = new Wartezimmer(wartezimmerplaetze);
         }
 
         for (int i = 0;i<behandlungszimmera;i++)
@@ -33,8 +33,8 @@ public class Rezeption
         Patient a = new Patient();
         a.setKrankheitsstatus(null);
         ankunft.enqueue(a);
-        //log = log + "Patient in Queue Ankunft hinzugefügt  \n";
-        System.out.println("Patient in Queue Ankunft hinzugefügt");
+        //log = log + "Patient in Queue Ankunft hinzugefuegt  \n";
+        System.out.println("Patient in Queue Ankunft hinzugefuegt");
     }
 
     public void bewegeArzt()
@@ -75,10 +75,10 @@ public class Rezeption
             {
                 if (wartezimmer[i].platzFrei())
                 {
-                    wartezimmer[i].hinzufügen((Priorität)ankunft.front());
+                    wartezimmer[i].hinzufuegen((Prioritaet)ankunft.front());
                     ankunft.dequeue();
-                    //log = log + "Patient in Wartezimmer " + i+ " hinzugefügt\n";
-                    System.out.println("Patient in Wartezimmer " +i+ " hinzugefügt");
+                    //log = log + "Patient in Wartezimmer " + i+ " hinzugefuegt\n";
+                    System.out.println("Patient in Wartezimmer " +i+ " hinzugefuegt");
                     break;
                 }
             }
@@ -95,10 +95,10 @@ public class Rezeption
         {
         if(!behandlungszimmer[o].istBesetzt())
         {
-        behandlungszimmer[o].hinzufügen((Patient)wartezimmer[i].gibErsten());
-        wartezimmer[i].löschen();
-        //log = log + "Patient  wurde aus Wartezimmer " +i+ " geholt und dem Behandlungsraum " +o+ " hinzugefügt\n";
-        System.out.println("Patient  wurde aus Wartezimmer " +i+ " geholt und dem Behandlungsraum " +o+ " hinzugefügt");
+        behandlungszimmer[o].hinzufuegen((Patient)wartezimmer[i].gibErsten());
+        wartezimmer[i].loeschen();
+        //log = log + "Patient  wurde aus Wartezimmer " +i+ " geholt und dem Behandlungsraum " +o+ " hinzugefuegt\n";
+        System.out.println("Patient  wurde aus Wartezimmer " +i+ " geholt und dem Behandlungsraum " +o+ " hinzugefuegt");
         break;
         }
         }
@@ -119,8 +119,8 @@ public class Rezeption
                     d = c;
                     if (!behandlungszimmer[c].istBesetzt())
                     {
-                        behandlungszimmer[c].hinzufügen((Patient)wartezimmer[a].gibErsten());
-                        System.out.println("Patient  wurde aus Wartezimmer " +a+ " geholt und dem Behandlungsraum " +c+ " hinzugefügt");
+                        behandlungszimmer[c].hinzufuegen((Patient)wartezimmer[a].gibErsten());
+                        System.out.println("Patient  wurde aus Wartezimmer " +a+ " geholt und dem Behandlungsraum " +c+ " hinzugefuegt");
                     }
                     else
                     {
@@ -135,7 +135,7 @@ public class Rezeption
         }
     }
 
-    public void behandlungeräumeLeeren()
+    public void behandlungeraeumeLeeren()
     {
         for (int i = 0; i < behandlungszimmer.length; i++)
         {
@@ -144,10 +144,10 @@ public class Rezeption
                 Patient a = behandlungszimmer[i].getPatient();
                 if(a.getKrankheitsstatus().equals("Behandelt"))
                 {
-                    behandlungszimmer[i].löschen();
+                    behandlungszimmer[i].loeschen();
                     abgang.enqueue(a);
-                    //log = log + "Patient  wurde aus Behandlungszimmer " +i+ "geholt und der abgang Queue hinzugefügt\n";
-                    System.out.println("Patient  wurde aus Behandlungszimmer " +i+ " geholt und der abgang Queue hinzugefügt");
+                    //log = log + "Patient  wurde aus Behandlungszimmer " +i+ "geholt und der abgang Queue hinzugefuegt\n";
+                    System.out.println("Patient  wurde aus Behandlungszimmer " +i+ " geholt und der abgang Queue hinzugefuegt");
                 }
             }
         }
@@ -215,7 +215,7 @@ public class Rezeption
         {
         bewegeArzt();
         behandlungszimmer[pArzt.getWo()].diagnostizieren();
-        behandlungeräumeLeeren();
+        behandlungeraeumeLeeren();
         queueZuWartezimmer();
         wartezimmerZuBehandlungsraum();
         System.out.println();

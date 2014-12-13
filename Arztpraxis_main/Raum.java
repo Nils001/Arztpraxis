@@ -9,7 +9,7 @@ public abstract class Raum
         patient = null;
     }
 
-    public void hinzufügen(Patient a)
+    public void hinzufuegen(Patient a)
     {
         if (!istBesetzt())
         {
@@ -17,7 +17,7 @@ public abstract class Raum
         }
     }
 
-    public void löschen()
+    public void loeschen()
     {
             patient = null;
     }

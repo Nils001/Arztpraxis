@@ -5,7 +5,7 @@
  * @author (your name here)
  * @version (version number or date here)
  */
-public abstract class Mensch extends Priorität
+public abstract class Mensch extends Prioritaet
 {
     private String name;
     
