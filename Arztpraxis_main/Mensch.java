@@ -7,7 +7,7 @@
  */
 public abstract class Mensch extends Prioritaet
 {
-    private String name;
+    protected String name;
     
     public Mensch(int p)
     {

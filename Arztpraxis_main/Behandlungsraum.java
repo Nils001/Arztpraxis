@@ -1,8 +1,7 @@
-
 public class Behandlungsraum extends Raum
 {
     private boolean hatArzt;
-    private Krankheit pDiagnose;
+    private String pDiagnose;
 
     public Behandlungsraum()
     {
@@ -14,7 +13,7 @@ public class Behandlungsraum extends Raum
         if (!istBesetzt())
         {
             patient = a;
-            pDiagnose =  a.getKrankheit();
+            pDiagnose = a.getDiagnose();
         }
     }
 
@@ -31,7 +30,7 @@ public class Behandlungsraum extends Raum
         hatArzt = a;
     }
 
-    public Krankheit getpDiagnose()
+    public String getpDiagnose()
     {
         return pDiagnose;
     }
