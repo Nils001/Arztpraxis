@@ -24,21 +24,26 @@ public class Wartezimmer
             else
             {
                 liste.toFirst();
-                while (a.isLess((Prioritaet)liste.getObject()))
+                while (liste.hasAccess())
                 {
-                    if (liste.hasAccess())
+                    Prioritaet p = (Prioritaet)liste.getObject();
+                    if (a.isLess(p))
                     {
-                        liste.next();
-                    }
-                    else
-                    {
-                        liste.append(a);
+                        liste.insert(a);
                         sindBesetzt = sindBesetzt + 1;
                         break;
                     }
+                    else
+                    {
+                        liste.next();
+                        if(!liste.hasAccess())
+                        {
+                            liste.append(a);
+                            sindBesetzt = sindBesetzt + 1;
+                        }
+                    }
                 }
-                liste.insert(a);
-                sindBesetzt = sindBesetzt + 1;
+
             }
         }
     }

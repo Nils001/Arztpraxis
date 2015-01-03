@@ -34,7 +34,7 @@ public class Rezeption
         a.setKrankheitsstatus(null);
         ankunft.enqueue(a);
         log = log + "Patient "+a+" in Queue Ankunft hinzugefuegt  \n";
-        System.out.println("Patient "+a+" in Queue Ankunft hinzugefuegt");
+        
     }
 
     public void bewegeArzt()
@@ -71,7 +71,7 @@ public class Rezeption
                     Patient a =(Patient) ankunft.front();
                     ankunft.dequeue();
                     log = log + "Patient"+a+" in Wartezimmer " + i+ " hinzugefuegt \n";
-                    System.out.println("Patient"+a+" in Wartezimmer " +i+ " hinzugefuegt");
+                    
                     break;
                 }
             }
@@ -84,7 +84,33 @@ public class Rezeption
 
     public void wartezimmerZuBehandlungsraum()
     {
+        boolean ab ;
+        for(int i=0;i<wartezimmer.length;i++)
+        {
+            if(wartezimmer[i].istBesetzt())
+            {
 
+                Prioritaet a =  wartezimmer[i].gibErsten();
+                log = log + "Patient "+a+" in Wartezimmer" +i+" gefunden \n";
+
+                for(int h =0;h<behandlungszimmer.length;h++)
+                {
+                    if(!behandlungszimmer[h].istBesetzt()){
+                        behandlungszimmer[h].hinzufuegen((Patient) a);
+                        log = log + "Patient"+a+" wurde in Behandlungszimmer "+h+" hinzugefügt \n";
+                        wartezimmer[i].loeschen();
+                        return;
+                    }
+                    if (h == behandlungszimmer.length-1)
+                    {
+                        log = log + "Fehler beim hinzufügen des Partienten.\n Entweder kein Patient gefunden oder kein freies Behandlunsgzimmer.";
+                        return;
+                    }
+
+                }
+
+            }
+        }
     }
 
     public void behandlungeraeumeLeeren()
@@ -99,7 +125,7 @@ public class Rezeption
                     behandlungszimmer[i].loeschen();
                     abgang.enqueue(a);
                     log = log + "Patient "+a+" wurde aus Behandlungszimmer " +i+ "geholt und der abgang Queue hinzugefuegt\n";
-                    System.out.println("Patient "+a+" wurde aus Behandlungszimmer " +i+ " geholt und der abgang Queue hinzugefuegt");
+                    
                 }
             }
         }
@@ -109,8 +135,6 @@ public class Rezeption
     {
         System.out.println(log);
     }
-
-
 
     /* public void simulation(int anzahl)
     {
