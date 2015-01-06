@@ -169,12 +169,13 @@ public class Patient extends Mensch
             }
         }
         a = r.nextInt(1000);
-       
-       name =String.valueOf(a); 
+
+        name =String.valueOf(a); 
     }
-    public String ToString()
+
+    public String toString()
     {
-    return name;
+        return name + " @ Priorität " + prioritaet;
     }
 
     public String getDiagnose()

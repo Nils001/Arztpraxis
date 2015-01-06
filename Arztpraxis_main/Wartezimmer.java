@@ -78,24 +78,32 @@ public class Wartezimmer
 
     }
 
-    public void ausgabe()
+    public String ausgabe()
     {
+        String a = "Wartezimmer ist leer";
         if (!liste.isEmpty())
         {
             liste.toFirst();
+            a = "";
+            int f = 0;
             while (liste.hasAccess())
             {
+                f++;
                 String krankheit = ((Patient)liste.getObject()).getDiagnose();
 
                 int i = ((Patient)liste.getObject()).getPrioritaet();
                 Integer meinInteger = new Integer(i);
                 String prioritaet = meinInteger.toString(); 
 
-                System.out.println(prioritaet+ " " +krankheit);
+               // System.out.println(prioritaet+ " " +krankheit);
+               //von Nils 
+               Patient b = (Patient)liste.getObject();
+               a = a+ f+". "+  b +"\n" ;
 
                 liste.next();
             }
         }
+        return a;
     }
 
     public boolean platzFrei()

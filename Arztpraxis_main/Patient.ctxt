@@ -2,7 +2,7 @@
 comment0.params=
 comment0.target=Patient()
 comment1.params=
-comment1.target=java.lang.String\ ToString()
+comment1.target=java.lang.String\ toString()
 comment2.params=
 comment2.target=java.lang.String\ getDiagnose()
 comment3.params=

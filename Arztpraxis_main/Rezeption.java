@@ -36,6 +36,7 @@ public class Rezeption
         log = log + "Patient "+a+" in Queue Ankunft hinzugefuegt  \n";
 
     }
+
     /* Der Arzt wird in das nächste Behandlungszimmer gebraucht in dem ein Patient auf die Behandlung wartet*/
     public void bewegeArzt()
     {
@@ -58,6 +59,7 @@ public class Rezeption
             log = log + "Arzt ist jetz in Raum" +a+"\n";
         }
     }
+
     /*Der erste Patient wird aus der Queue in das erste freie Wartezimmer gebracht */
     public void queueZuWartezimmer()
     {
@@ -81,6 +83,7 @@ public class Rezeption
             log = log + "Kann keine Patienten zum Wartezimmer hinzufügen, da die Ankunft Queue leer ist \n";
         }
     }
+
     /*Der erste Patient im ersten Wartezimmer wird in den ersten freien Behandlungsraum gebracht*/
     public void wartezimmerZuBehandlungsraum()
     {
@@ -112,6 +115,7 @@ public class Rezeption
             }
         }
     }
+
     /*Der erste Behandlungsraum der besetzt ist wird geleert falls der Patient bereits behandelt wurde*/
     public void behandlungeraeumeLeeren()
     {
@@ -123,7 +127,7 @@ public class Rezeption
                 Patient a = behandlungszimmer[i].getPatient();
                 if(a.getKrankheitsstatus() == "Behandelt")
                 {
-                    
+
                     behandlungszimmer[i].loeschen();
                     abgang.enqueue(a);
                     log = log + "Patient "+a+" wurde aus Behandlungszimmer " +i+ "geholt und der Abgang Queue hinzugefuegt\n";
@@ -132,24 +136,64 @@ public class Rezeption
             }
         }
     }
+
     /*In dem Raum, in welchen sich der Arzt befindet, wird der Patient behandelt */
     public void behandeln()
     {
         int a = pArzt.getWo();
         behandlungszimmer[a].diagnostizieren();
     }
+
     /*Der gesammte Log wird ausgegeben*/
     public void logAusgeben()
     {
         System.out.println(log);
     }
+
     public void statusAusgabe()
     {
-        String status;
-        status = status + ""
-    
+        String status = "null";
+        int i = 0;
+        Patient a;
+        status = status + "Arzt befindet sich in Zimmer" +pArzt.getWo()+"\n";
+        status = status +"\n";
+        status = status + "In der Ankunftsschlange befinden sich : \n ";
+        while(!ankunft.isEmpty())
+        {
+            a =(Patient) ankunft.front();
+            status = status + i +". "+ a +" \n";
+            i++;
+        }
+        status = status +"\n";
+        for(i = 0; i < behandlungszimmer.length; i++)
+        {
+            if(behandlungszimmer[i].istBesetzt())
+            {   
+                a = behandlungszimmer[i].getPatient();
+                status = status + "Behandlungszimmer "+ i +" ist besetzt mit dem Patienten"+ a +" \n";
+            }
+            else
+            {
+                status = status + "Behandlungszimmer "+ i +"ist frei \n";
+            }
+            status = status +"\n";
+        }
+        for(i=0;i<wartezimmer.length;i++)
+        {
+            status = status + "Wartezimmer " + i+ " : \n";
+            status = status + wartezimmer[i].ausgabe();
+
+        }
+        status = status +"\n";
+        i = 0;
+        while(!abgang.isEmpty())
+        {
+            a =(Patient) abgang.front();
+            status = status + i +". "+ a +" \n";
+            i++;
+        }
     }
-   
+
     /* public void simulation(int anzahl)
     {
     for(int a = 0; a < anzahl; a++)                             //funktioniert
