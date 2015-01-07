@@ -1,7 +1,7 @@
 
 public class Rezeption
 {
-    private String log;
+    private String log ="";
     private Arzt pArzt;
     private Wartezimmer wartezimmer[];
     private Behandlungsraum behandlungszimmer[];

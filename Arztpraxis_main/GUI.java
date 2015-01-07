@@ -18,7 +18,7 @@ public class GUI extends JFrame implements ActionListener
     private JButton bButton10;
     private JButton bButton11;
     private JButton bButton12;
-
+    private JOptionPane popup;
     private JTextField anzahlw;
     private JTextField anzahlb;
     private JTextField wartezimmerplaetze;
@@ -30,6 +30,7 @@ public class GUI extends JFrame implements ActionListener
         setSize(770, 1000);
         setLayout(null); 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+        popup = new JOptionPane();
 
         anzahlw = new JTextField();
         anzahlw.setBounds(640,10, 100, 30);
@@ -119,7 +120,7 @@ public class GUI extends JFrame implements ActionListener
         bButton11.setVisible(false);
         add(bButton11);
 
-        bButton12 = new JButton("Button 12");
+        bButton12 = new JButton("Clear");
         bButton12.setBounds(420,450, 200, 30);
         bButton12.addActionListener(this); 
         bButton12.setVisible(false);
@@ -157,7 +158,7 @@ public class GUI extends JFrame implements ActionListener
             System.out.println("int cc");
              */
             rez = new Rezeption(aa,bb,cc);
-            System.out.println("neue rezeption");
+            
 
             anzahlw.setVisible(false);
             anzahlb.setVisible(false);
@@ -181,26 +182,32 @@ public class GUI extends JFrame implements ActionListener
         else if (src == bButton1)
         {
             rez.neuerPatient();
+            tAusgabe.setText(rez.logAusgeben());
         }
         else if (src == bButton2)
         {
             rez.bewegeArzt();
+            tAusgabe.setText(rez.logAusgeben());
         }
         else if (src == bButton3)
         {
             rez.queueZuWartezimmer();
+            tAusgabe.setText(rez.logAusgeben());
         }
         else if (src == bButton4)
         {
             rez.wartezimmerZuBehandlungsraum();
+            tAusgabe.setText(rez.logAusgeben());
         }
         else if (src == bButton5)
         {
             rez.behandlungeraumLeeren();
+            tAusgabe.setText(rez.logAusgeben());
         }
         else if (src == bButton6)
         {
             rez.behandeln();
+            tAusgabe.setText(rez.logAusgeben());
         }
         else if (src == bButton7)
         {
@@ -214,11 +221,29 @@ public class GUI extends JFrame implements ActionListener
         }
         else if (src == bButton9)
         {
+            boolean a = rez.behandlungsraumBesetzt();
+            if (a)
+            {
+                JOptionPane.showMessageDialog(popup, "In einem Behandlungsraum ist ein Patient");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(popup, "In keinem Behandlungsraum ist ein Patient");
 
+            }
         }
         else if (src == bButton10)
         {
+            boolean a = rez.wartezimmerBesetzt();
+            if (a)
+            {
+                JOptionPane.showMessageDialog(popup, "In einem Wartezimmer mindestens ist ein Patient");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(popup, "In keinem Wartezimmer ist ein Patient");
 
+            }
         }
         else if (src == bButton11)
         {
@@ -226,7 +251,9 @@ public class GUI extends JFrame implements ActionListener
         }
         else if (src == bButton12)
         {
-
+            tAusgabe.setText("");
         }
+
     }
+
 }
