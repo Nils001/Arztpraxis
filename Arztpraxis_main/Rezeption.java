@@ -146,12 +146,12 @@ public class Rezeption
     }
 
     /*Der gesammte Log wird ausgegeben*/
-    public void logAusgeben()
+    public String logAusgeben()
     {
-        System.out.println(log);
+        return log;
     }
 
-    public void statusAusgabe()
+    public String statusAusgabe()
     {
         String status = "null";
         int i = 0;
@@ -193,6 +193,7 @@ public class Rezeption
             status = status + i +". "+ a +" \n";
             i++;
         }
+        return status;
     }
 
     /*false wenn keine Patienten in den Behandlungsräumen sind,
