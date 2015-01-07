@@ -168,9 +168,6 @@ public class Patient extends Mensch
                 break;                        
             }
         }
-        a = r.nextInt(1000);
-
-        name =String.valueOf(a); 
     }
 
     public String toString()

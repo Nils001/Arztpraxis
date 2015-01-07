@@ -33,7 +33,7 @@ public class Rezeption
         Patient a = new Patient();
         a.setKrankheitsstatus(null);
         ankunft.enqueue(a);
-        log = log + "Patient "+a+" in Queue Ankunft hinzugefuegt  \n";
+        log = log + "Patient "+a.getName()+" in Queue Ankunft hinzugefuegt  \n";
 
     }
 
@@ -41,7 +41,6 @@ public class Rezeption
     public void bewegeArzt()
     {
         int a = pArzt.getWo();
-        log = log + "Arzt ist in Raum " +a+"\n";
         behandlungszimmer[a].setArzt(false);
         a++;
 
