@@ -44,6 +44,7 @@ public class Rezeption
         log = log + "Arzt ist in Raum " +a+"\n";
         behandlungszimmer[a].setArzt(false);
         a++;
+
         if(a<behandlungszimmer.length)
         {
             behandlungszimmer[a].setArzt(true);
@@ -192,6 +193,22 @@ public class Rezeption
             status = status + i +". "+ a +" \n";
             i++;
         }
+    }
+
+    /*false wenn keine Patienten in den Behandlungsräumen sind,
+    true wenn mindestens ein Patient in einem Behandlungsraum ist.
+     */
+    public boolean behandlungsraumBesetzt()
+    {
+        
+        for(i = 0; i < behandlungszimmer.length; i++)
+        {
+            if(!behandlungszimmer[i].istbesetzt())
+            {
+                return true;
+            }
+        }
+        
     }
 
     /* public void simulation(int anzahl)

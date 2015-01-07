@@ -23,4 +23,6 @@ comment7.target=void\ logAusgeben()
 comment7.text=Der\ gesammte\ Log\ wird\ ausgegeben
 comment8.params=
 comment8.target=void\ statusAusgabe()
-numComments=9
+comment9.params=
+comment9.target=void\ behandlungsraumBesetzt()
+numComments=10
