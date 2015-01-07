@@ -54,7 +54,7 @@ public class GUI extends JFrame implements ActionListener
         wartezimmerplaetze.setBounds(640,90, 100, 30);
         add(wartezimmerplaetze);
 
-        JButton start = new JButton("Start");
+        start = new JButton("Start");
         start.setBounds(640,130, 100, 30);
         start.addActionListener(this);
         add(start);
@@ -142,15 +142,24 @@ public class GUI extends JFrame implements ActionListener
 
     public void actionPerformed(ActionEvent e) 
     {   
-        if (e.getSource() == start)
+        Object src = e.getSource();
+        if (src == start)
         {
+            System.out.println("start");
             String a = anzahlw.getText();
+            System.out.println("string a");
             String b = anzahlb.getText();
+            System.out.println("string b");
             String c = wartezimmerplaetze.getText();
+            System.out.println("string c");
             int aa = Integer.parseInt(a);
+            System.out.println("int aa");
             int bb = Integer.parseInt(b);
+            System.out.println("int bb");
             int cc = Integer.parseInt(c);
+            System.out.println("int cc");
             rez = new Rezeption(aa,bb,cc);
+            System.out.println("neue rezeption");
             //anzahlw.setVisible(false);
             //anzahlb.setVisible(false);
             //wartezimmerplaetze.setVisible(false);
@@ -169,53 +178,53 @@ public class GUI extends JFrame implements ActionListener
             bButton2.setVisible(true);
             bButton1.setVisible(true);*/
         }
-        if (e.getSource() == bButton1)
+        if (src == bButton1)
         {
             rez.neuerPatient();
         }
-        if (e.getSource() == bButton2)
+        if (src == bButton2)
         {
             rez.bewegeArzt();
         }
-        if (e.getSource() == bButton3)
+        if (src == bButton3)
         {
             rez.queueZuWartezimmer();
         }
-        if (e.getSource() == bButton4)
+        if (src == bButton4)
         {
             rez.wartezimmerZuBehandlungsraum();
         }
-        if (e.getSource() == bButton5)
+        if (src == bButton5)
         {
             rez.behandlungeraumLeeren();
         }
-        if (e.getSource() == bButton6)
+        if (src == bButton6)
         {
             rez.behandeln();
         }
-        if (e.getSource() == bButton7)
+        if (src == bButton7)
         {
             String a =rez.logAusgeben();
             tAusgabe.setText(a);
         }
-        if (e.getSource() == bButton8)
+        if (src == bButton8)
         {
             String a = rez.statusAusgabe();
             tAusgabe.setText(a);
         }
-        if (e.getSource() == bButton9)
+        if (src == bButton9)
         {
 
         }
-        if (e.getSource() == bButton10)
+        if (src == bButton10)
         {
 
         }
-        if (e.getSource() == bButton11)
+        if (src == bButton11)
         {
 
         }
-        if (e.getSource() == bButton12)
+        if (src == bButton12)
         {
 
         }
