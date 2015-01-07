@@ -54,6 +54,7 @@ public class GUI extends JFrame implements ActionListener
         
         JButton start = new JButton("Start");
         start.setBounds(420,130, 100, 30);
+        start.addActionListener(this);
         add(start);
 
         setSize(550, 1000);
