@@ -201,14 +201,29 @@ public class Rezeption
     public boolean behandlungsraumBesetzt()
     {
         
-        for(i = 0; i < behandlungszimmer.length; i++)
+        for(int i = 0; i < behandlungszimmer.length; i++)
         {
-            if(!behandlungszimmer[i].istbesetzt())
+            if(!behandlungszimmer[i].istBesetzt())
             {
                 return true;
             }
         }
+        return false;
+    }
+    /*false wenn keine Patienten in den Warteräumen sind,
+    true wenn mindestens ein Patient in einem Warteraum ist.
+     */
+    public boolean wartezimmerBesetzt()
+    {
         
+        for(int i = 0; i < wartezimmer.length; i++)
+        {
+            if(!wartezimmer[i].istBesetzt())
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     /* public void simulation(int anzahl)
