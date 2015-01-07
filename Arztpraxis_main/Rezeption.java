@@ -153,7 +153,7 @@ public class Rezeption
 
     public String statusAusgabe()
     {
-        String status = "null";
+        String status = "";
         int i = 0;
         Patient a;
         status = status + "Arzt befindet sich in Zimmer" +pArzt.getWo()+"\n";
@@ -171,18 +171,18 @@ public class Rezeption
             if(behandlungszimmer[i].istBesetzt())
             {   
                 a = behandlungszimmer[i].getPatient();
-                status = status + "Behandlungszimmer "+ i +" ist besetzt mit dem Patienten"+ a +" \n";
+                status = status + "Behandlungszimmer "+ i +" ist besetzt mit dem Patienten "+ a +" \n";
             }
             else
             {
-                status = status + "Behandlungszimmer "+ i +"ist frei \n";
+                status = status + "Behandlungszimmer "+ i +" ist frei \n";
             }
             status = status +"\n";
         }
         for(i=0;i<wartezimmer.length;i++)
         {
             status = status + "Wartezimmer " + i+ " : \n";
-            status = status + wartezimmer[i].ausgabe();
+            status = status + wartezimmer[i].ausgabe() + "\n";
 
         }
         status = status +"\n";
