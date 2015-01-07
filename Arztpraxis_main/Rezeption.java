@@ -134,6 +134,10 @@ public class Rezeption
                     log = log + "Patient "+a+" wurde aus Behandlungszimmer " +i+ "geholt und der Abgang Queue hinzugefuegt\n";
                     return;
                 }
+                else
+                {
+                log = log + "Dieser Patient wurde noch nicht behandelt ! \n";
+                }
             }
         }
     }
