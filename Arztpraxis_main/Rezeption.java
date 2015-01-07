@@ -88,7 +88,7 @@ public class Rezeption
     /*Der erste Patient im ersten Wartezimmer wird in den ersten freien Behandlungsraum gebracht*/
     public void wartezimmerZuBehandlungsraum()
     {
-        boolean ab ;
+
         for(int i=0;i<wartezimmer.length;i++)
         {
             if(wartezimmer[i].istBesetzt())
@@ -107,14 +107,14 @@ public class Rezeption
                     }
                     if (h == behandlungszimmer.length-1)
                     {
-                        log = log + "Fehler beim hinzufügen des Partienten.\n Entweder kein Patient gefunden oder kein freies Behandlunsgzimmer.";
+
                         return;
                     }
 
                 }
-
             }
         }
+        log = log + "Fehler beim hinzufügen des Partienten.\n Entweder kein Patient gefunden oder kein freies Behandlunsgzimmer.";
     }
 
     /*Der erste Behandlungsraum der besetzt ist wird geleert falls der Patient bereits behandelt wurde*/
@@ -200,25 +200,26 @@ public class Rezeption
      */
     public boolean behandlungsraumBesetzt()
     {
-        
+
         for(int i = 0; i < behandlungszimmer.length; i++)
         {
-            if(!behandlungszimmer[i].istBesetzt())
+            if(behandlungszimmer[i].istBesetzt())
             {
                 return true;
             }
         }
         return false;
     }
+
     /*false wenn keine Patienten in den Warteräumen sind,
     true wenn mindestens ein Patient in einem Warteraum ist.
      */
     public boolean wartezimmerBesetzt()
     {
-        
+
         for(int i = 0; i < wartezimmer.length; i++)
         {
-            if(!wartezimmer[i].istBesetzt())
+            if(wartezimmer[i].istBesetzt())
             {
                 return true;
             }
@@ -226,26 +227,38 @@ public class Rezeption
         return false;
     }
 
-    /* public void simulation(int anzahl)
+    public boolean warteraumNichtVoll()
     {
+        for(int i = 0; i < wartezimmer.length; i++)
+        {
+            if(wartezimmer[i].platzFrei())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /*   public void simulation(int anzahl)
+    {
+    boolean a;
     for(int a = 0; a < anzahl; a++)                             //funktioniert
     {
     neuerPatient();
     }
 
-    while (!warteraumVoll() && !ankunft.isEmpty())              //funktioniert
+    while (!warteraumNichtVoll() && !ankunft.isEmpty())              //funktioniert
     {
     queueZuWartezimmer();
     }
-
-    for (int i = 0; i < wartezimmer.length; i++)
+    if(!ankunft.isEmpty())
     {
-    if (wartezimmer[i] != null)
+    a=true;
+    }
+    while(!behandlungsraumBesetzt())
     {
-    wartezimmer[i].ausgabe();
-    }
-    }
 
+    }
     /*for(int b = 0; b < behandlungszimmer.length; b++)         //funktioniert
     {
     wartezimmerZuBehandlungsraum();
@@ -259,7 +272,7 @@ public class Rezeption
     queueZuWartezimmer();
     wartezimmerZuBehandlungsraum();
     System.out.println();
-    }*/
+    }
     //logAusgeben();*/
 }
 
