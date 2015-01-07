@@ -118,7 +118,7 @@ public class Rezeption
     }
 
     /*Der erste Behandlungsraum der besetzt ist wird geleert falls der Patient bereits behandelt wurde*/
-    public void behandlungeraeumeLeeren()
+    public void behandlungeraumLeeren()
     {
         for (int i = 0; i < behandlungszimmer.length; i++)
         {
