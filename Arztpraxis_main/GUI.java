@@ -102,13 +102,13 @@ public class GUI extends JFrame implements ActionListener
         bButton8.setVisible(false);
         add(bButton8);
 
-        bButton9 = new JButton("Button 9");
+        bButton9 = new JButton("Ist ein Behandlungsraum besetzt ?");
         bButton9.setBounds(420,330, 200, 30);
         bButton9.addActionListener(this); 
         bButton9.setVisible(false);
         add(bButton9);
 
-        bButton10 = new JButton("Button 10");
+        bButton10 = new JButton("Ist ein Wartezimmer besetzt ?");
         bButton10.setBounds(420,370, 200, 30);
         bButton10.addActionListener(this); 
         bButton10.setVisible(false);
