@@ -33,7 +33,7 @@ public class Rezeption
         Patient a = new Patient();
         a.setKrankheitsstatus(null);
         ankunft.enqueue(a);
-        log = log + "Patient "+a.getName()+" in Queue Ankunft hinzugefuegt  \n";
+        log = log + "Patient "+a+" in Queue Ankunft hinzugefuegt  \n";
 
     }
 
