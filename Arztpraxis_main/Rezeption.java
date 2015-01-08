@@ -113,7 +113,8 @@ public class Rezeption
                 }
             }
         }
-        log = log + "Fehler beim hinzufügen des Partienten.\n Entweder kein Patient gefunden oder kein freies Behandlunsgzimmer.";
+        log = log + "Fehler beim hinzufügen des Partienten. \n";
+        log = log + "Entweder kein Patient gefunden oder kein freies Behandlunsgzimmer. \n";
     }
 
     /*Der erste Behandlungsraum der besetzt ist wird geleert falls der Patient bereits behandelt wurde*/
@@ -135,7 +136,7 @@ public class Rezeption
                 }
                 else
                 {
-                log = log + "Dieser Patient wurde noch nicht behandelt ! \n";
+                    log = log + "Dieser Patient wurde noch nicht behandelt ! \n";
                 }
             }
         }
@@ -146,6 +147,10 @@ public class Rezeption
     {
         int a = pArzt.getWo();
         behandlungszimmer[a].diagnostizieren();
+        String b = behandlungszimmer[a].getpDiagnose();
+        log = log + "Patient in Behandlungszimmer "+a+ " behandelt \n";
+        log = log + "Der Patient hat " +b+ "\n";
+        
     }
 
     /*Der gesammte Log wird ausgegeben*/
@@ -162,11 +167,20 @@ public class Rezeption
         status = status + "Arzt befindet sich in Zimmer" +pArzt.getWo()+"\n";
         status = status +"\n";
         status = status + "In der Ankunftsschlange befinden sich : \n ";
+        Queue hilfe = new Queue();
         while(!ankunft.isEmpty())
         {
             a =(Patient) ankunft.front();
             status = status + i +". "+ a +" \n";
             i++;
+            hilfe.enqueue(ankunft.front());
+            ankunft.dequeue();
+        }
+        while(!hilfe.isEmpty())
+        {
+            ankunft.enqueue(hilfe.front());
+            hilfe.dequeue();
+
         }
         status = status +"\n";
         for(i = 0; i < behandlungszimmer.length; i++)
@@ -195,6 +209,14 @@ public class Rezeption
             a =(Patient) abgang.front();
             status = status + i +". "+ a +" \n";
             i++;
+            hilfe.enqueue(abgang.front());
+            abgang.dequeue();
+        }
+         while(!hilfe.isEmpty())
+        {
+            abgang.enqueue(hilfe.front());
+            hilfe.dequeue();
+
         }
         return status;
     }

@@ -26,7 +26,7 @@ public class GUI extends JFrame implements ActionListener
 
     public GUI ()
     {
-        super("Arztpraxis"); 
+        super("Arztpraxis Alpha"); 
         setSize(770, 1000);
         setLayout(null); 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
