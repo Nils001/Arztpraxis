@@ -18,6 +18,9 @@ public class GUI extends JFrame implements ActionListener
     private JButton bButton10;
     private JButton bButton11;
     private JButton bButton12;
+    private JLabel lanzahlw;
+    private JLabel lanzahlb;
+    private JLabel lwartezimmer;
     private JOptionPane popup;
     private JTextField anzahlw;
     private JTextField anzahlb;
@@ -32,20 +35,32 @@ public class GUI extends JFrame implements ActionListener
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
         popup = new JOptionPane();
 
+        lanzahlw = new JLabel("Anzahl Wartezimmer");
+        lanzahlw.setBounds(170,100, 200, 30);
+        add(lanzahlw);
+
+        lanzahlb = new JLabel("Anzahl Behandlungsräume");
+        lanzahlb.setBounds(170,140, 200, 30);
+        add(lanzahlb);
+
+        lwartezimmer = new JLabel("Plätze im Wartezimmer");
+        lwartezimmer.setBounds(170,180, 200, 30);
+        add(lwartezimmer);
+
         anzahlw = new JTextField();
-        anzahlw.setBounds(640,10, 100, 30);
+        anzahlw.setBounds(390,100, 100, 30);
         add(anzahlw);
 
         anzahlb = new JTextField();
-        anzahlb.setBounds(640,50, 100, 30);
+        anzahlb.setBounds(390,140, 100, 30);
         add(anzahlb);
 
         wartezimmerplaetze = new JTextField();
-        wartezimmerplaetze.setBounds(640,90, 100, 30);
+        wartezimmerplaetze.setBounds(390,180, 100, 30);
         add(wartezimmerplaetze);
 
         start = new JButton("Start");
-        start.setBounds(640,130, 100, 30);
+        start.setBounds(390,220, 100, 30);
         start.addActionListener(this);
         add(start);
 
@@ -158,7 +173,6 @@ public class GUI extends JFrame implements ActionListener
             System.out.println("int cc");
              */
             rez = new Rezeption(aa,bb,cc);
-            
 
             anzahlw.setVisible(false);
             anzahlb.setVisible(false);
