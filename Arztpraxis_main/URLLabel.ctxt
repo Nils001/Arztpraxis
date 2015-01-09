@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=URLLabel()
+comment1.params=label\ url
+comment1.target=URLLabel(java.lang.String,\ java.lang.String)
+comment2.params=url
+comment2.target=void\ setURL(java.lang.String)
+comment3.params=g
+comment3.target=void\ paintComponent(java.awt.Graphics)
+numComments=4
