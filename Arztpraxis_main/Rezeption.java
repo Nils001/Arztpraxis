@@ -147,12 +147,13 @@ public class Rezeption
         if(behandlungszimmer[pArzt.getWo()].istBesetzt())
         {
             int a = pArzt.getWo();
+            Patient c = behandlungszimmer[a].getPatient();
+
             behandlungszimmer[a].diagnostizieren();
             String b = behandlungszimmer[a].getpDiagnose();
             log = log + "Patient in Behandlungszimmer "+a+ " behandelt \n";
-            log = log + "Der Patient hat " +b+ "\n";
+            log = log + "Der Patient hat die Krankheit " +c.getDiagnose()+ "\n";
 
-            Patient c = behandlungszimmer[a].getPatient();
             behandlungszimmer[a].loeschen();
             abgang.enqueue(c);
             log = log + "Patient "+c+" wurde aus Behandlungszimmer " +a+ " geholt und der Abgang Queue hinzugefuegt\n";

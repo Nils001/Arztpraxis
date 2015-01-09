@@ -233,7 +233,7 @@ public class gui_awt {
     private void initialize1() {
         frmPopup = new JFrame();
         frmPopup.setResizable(false);
-
+        frmPopup.setVisible(true);
         frmPopup.setTitle("Initialisierung");
 
         frmPopup.setBounds(100, 100, 550, 234);
@@ -269,6 +269,8 @@ public class gui_awt {
         JButton btnNewButton = new JButton("Start !");
         btnNewButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
+                    if(textField.getText()!="" || textField_1.getText()!="" || textField_2.getText()!="" )
+                    {
                     int aa = Integer.parseInt(textField.getText());
                     int bb = Integer.parseInt(textField_1.getText());
                     int cc = Integer.parseInt(textField_2.getText());
@@ -276,6 +278,7 @@ public class gui_awt {
                     frmPopup.dispose();
 
                     initialize();
+                }
                 }
 
             });
