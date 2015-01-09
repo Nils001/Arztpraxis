@@ -14,6 +14,9 @@ import org.junit.Test;
 public class test
 {
     private Rezeption rezeptio1;
+ 
+
+    
 
     /**
      * Default constructor for test class test
@@ -30,7 +33,8 @@ public class test
     @Before
     public void setUp()
     {
-        rezeptio1 = new Rezeption(2, 3, 5);
+        rezeptio1 = new Rezeption(2, 2, 3);
+       
     }
 
     /**

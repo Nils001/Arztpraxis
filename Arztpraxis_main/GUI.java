@@ -129,7 +129,7 @@ public class GUI extends JFrame implements ActionListener
         bButton10.setVisible(false);
         add(bButton10);
 
-        bButton11 = new JButton("Button 11");
+        bButton11 = new JButton("Simulation");
         bButton11.setBounds(420,410, 300, 30);
         bButton11.addActionListener(this); 
         bButton11.setVisible(false);
@@ -178,7 +178,10 @@ public class GUI extends JFrame implements ActionListener
             anzahlb.setVisible(false);
             wartezimmerplaetze.setVisible(false);
             start.setVisible(false);
-
+            lanzahlw.setVisible(false);
+            lanzahlb.setVisible(false);
+            lwartezimmer.setVisible(false);
+            
             bButton12.setVisible(true);
             bButton11.setVisible(true);
             bButton10.setVisible(true);
@@ -261,7 +264,7 @@ public class GUI extends JFrame implements ActionListener
         }
         else if (src == bButton11)
         {
-
+            rez.simulation(8);
         }
         else if (src == bButton12)
         {

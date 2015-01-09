@@ -12,12 +12,12 @@ public abstract class Mensch extends Prioritaet
     public Mensch(int p)
     {
         super(p);
-        
+
         String vorname = "";
         String nachname = "";
         Random r = new Random();     
-        int a = r.nextInt(10);
-        int b = r.nextInt(10);
+        int a = r.nextInt(20);
+        int b = r.nextInt(20);
 
         switch(a)
         {
@@ -37,19 +37,50 @@ public abstract class Mensch extends Prioritaet
             vorname = "Jonas ";
             break;
             case 5:
-            vorname = "Emma ";
+            vorname = "Leon ";
             break;
             case 6:
-            vorname = "Mia ";
+            vorname = "Finn ";
             break;
             case 7:
-            vorname = "Hannah ";
+            vorname = "Tim ";
             break;
             case 8:
-            vorname = "Sofia ";
+            vorname = "Felix ";
             break;
             case 9:
-            vorname = "Emilia ";
+            vorname = "Max ";
+            break;
+            //////////////////////////////////////////////////////////////
+            case 10:
+            vorname = "Anna ";
+            break;
+            case 11:
+            vorname = "Lena ";
+            break;
+            case 12:
+            vorname = "Lea ";
+            break;
+            case 13:
+            vorname = "Emilie ";
+            break;
+            case 14:
+            vorname = "Maria ";
+            break;
+            case 15:
+            vorname = "Emma ";
+            break;
+            case 16:
+            vorname = "Lara ";
+            break;
+            case 17:
+            vorname = "Hannah ";
+            break;
+            case 18:
+            vorname = "Sofia ";
+            break;
+            case 19:
+            vorname = "Lina ";
             break;
         }
 
@@ -85,8 +116,38 @@ public abstract class Mensch extends Prioritaet
             case 9:
             nachname = "Hoffmann";
             break;
+            case 10:
+            nachname = "Schäfer";
+            break;
+            case 11:
+            nachname = "Koch";
+            break;
+            case 12:
+            nachname = "Bauer";
+            break;
+            case 13:
+            nachname = "Richter";
+            break;
+            case 14:
+            nachname = "Klein";
+            break;
+            case 15:
+            nachname = "Schröder";
+            break;
+            case 16:
+            nachname = "Neumann";
+            break;
+            case 17:
+            nachname = "Zimmermann";
+            break;
+            case 18:
+            nachname = "Krüger";
+            break;
+            case 19:
+            nachname = "Hartmann";
+            break;
         }
-        
+
         name = vorname + nachname;
     }
 
