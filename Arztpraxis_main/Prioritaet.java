@@ -1,5 +1,5 @@
-
-public abstract class Prioritaet
+import java.io.Serializable; 
+public abstract class Prioritaet implements Serializable 
 {
     protected int prioritaet;    
 

@@ -1,5 +1,5 @@
-
-public class Wartezimmer
+import java.io.Serializable;
+public class Wartezimmer implements Serializable 
 {
     private List liste;
     private int plaetze;

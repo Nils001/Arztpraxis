@@ -23,6 +23,7 @@ import java.awt.*;
 import javax.swing.*; 
 import java.awt.event.*;
 import javax.swing.JFormattedTextField;
+import javax.swing.JFileChooser;
 
 public class gui_awt {
     private JFrame frmArztpraxisBeta;
@@ -239,7 +240,7 @@ public class gui_awt {
         frmPopup.setBounds(100, 100, 550, 234);
         frmPopup.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frmPopup.getContentPane().setLayout(null);
-        JFormattedTextField	textField = new  JFormattedTextField(NumberFormat.getInstance());
+        JFormattedTextField textField = new  JFormattedTextField(NumberFormat.getInstance());
         textField.setBounds(448, 11, 86, 34);
         frmPopup.getContentPane().add(textField);
         textField.setColumns(10);
@@ -269,16 +270,25 @@ public class gui_awt {
         JButton btnNewButton = new JButton("Start !");
         btnNewButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    if(textField.getText()!="" || textField_1.getText()!="" || textField_2.getText()!="" )
+                    if(textField.getText()!="" && textField_1.getText()!="" && textField_2.getText()!="" )
                     {
-                    int aa = Integer.parseInt(textField.getText());
-                    int bb = Integer.parseInt(textField_1.getText());
-                    int cc = Integer.parseInt(textField_2.getText());
-                    rez = new Rezeption(aa,bb,cc);
-                    frmPopup.dispose();
+                        int aa = Integer.parseInt(textField.getText());
+                        int bb = Integer.parseInt(textField_1.getText());
+                        int cc = Integer.parseInt(textField_2.getText());
+                        if(aa !=0 && bb!=0 && cc!=0)
+                        {
+                            rez = new Rezeption(aa,bb,cc);
+                            frmPopup.dispose();
+                            initialize();
+                        }
+                        else
+                        {
 
-                    initialize();
-                }
+                            frmPopup.dispose();
+
+                            initialize1();
+                        }
+                    }
                 }
 
             });
@@ -286,4 +296,20 @@ public class gui_awt {
         frmPopup.getContentPane().add(btnNewButton);
     }
 
+    public void speichern()
+    {
+        String currDir;
+        JFileChooser chooser = new JFileChooser();
+        OkjektSchreiben o = new OkjektSchreiben();
+        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int returnVal = chooser.showOpenDialog(null);
+        if(returnVal == JFileChooser.APPROVE_OPTION) {
+            
+             currDir = chooser.getSelectedFile().getAbsolutePath();
+            
+            o.schreiben(rez,currDir);
+            
+        }
+
+    }
 }

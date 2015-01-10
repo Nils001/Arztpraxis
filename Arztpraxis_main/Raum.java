@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public abstract class Raum
+public abstract class Raum implements Serializable 
 {
     private boolean besetzt;
     protected Patient patient;    

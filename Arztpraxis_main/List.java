@@ -1,10 +1,10 @@
-
-public class List
+import java.io.Serializable;
+public class List implements Serializable 
 
 { 
     private Node first, tail, current;
 
-    private class Node 
+    private class Node implements Serializable 
     { 
         private Object contentObj;
         private Node nextNode;

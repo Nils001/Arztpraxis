@@ -1,5 +1,6 @@
-
-public class Rezeption
+import java.io.Serializable;
+ 
+public class Rezeption implements Serializable 
 {
     private String log = "";
     private Arzt pArzt;

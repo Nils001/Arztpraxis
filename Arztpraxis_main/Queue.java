@@ -1,9 +1,10 @@
+import java.io.Serializable;
 
-public class Queue
+public class Queue implements Serializable 
 {
     private Node head, tail;
 
-    private class Node
+    private class Node implements Serializable 
     {
         private Object content;
         private Node nextNode;
