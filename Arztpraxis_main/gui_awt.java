@@ -1,32 +1,17 @@
-import java.awt.EventQueue;
-import java.text.NumberFormat;
-import javax.swing.AbstractButton;
-import javax.swing.JFrame;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.JMenu;
-import javax.swing.JTabbedPane;
-import javax.swing.JTextArea;
-import javax.swing.SwingConstants;
-import javax.swing.JLabel;
-import java.awt.TextArea;
-import java.awt.Insets;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JPanel;
-import java.awt.Window.Type;
-import javax.swing.JFormattedTextField;
-import java.text.NumberFormat;
+
+import javax.swing.*;
 import java.awt.*;
-import javax.swing.*; 
+import java.text.NumberFormat;
 import java.awt.event.*;
-import javax.swing.JFormattedTextField;
+import java.text.NumberFormat;
 import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class gui_awt {
     private JFrame frmArztpraxisBeta;
+    private TextArea textAream_1;
+    private TextArea textAream_2;
     private JFrame frmPopup;
     private Rezeption rez;
     private JOptionPane popup;
@@ -61,12 +46,31 @@ public class gui_awt {
         frmArztpraxisBeta = new JFrame();
         frmArztpraxisBeta.setVisible(true);
         frmArztpraxisBeta.setTitle("Arztpraxis Beta");
-        frmArztpraxisBeta.setBounds(100, 100, 800, 1022);
+        frmArztpraxisBeta.setBounds(100, 100, 950, 1022);
         frmArztpraxisBeta.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JMenuBar menuBar = new JMenuBar();
         menuBar.setMargin(new Insets(2, 2, 2, 0));
         frmArztpraxisBeta.setJMenuBar(menuBar);
+
+        JMenu mnDatei = new JMenu("Datei");
+        menuBar.add(mnDatei);
+
+        JMenuItem mntmSpeichern = new JMenuItem("Speichern");
+        mntmSpeichern.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    speichern();
+                }
+            });
+        mnDatei.add(mntmSpeichern);
+
+        JMenuItem mntmSpeichern_1 = new JMenuItem("Laden");
+        mntmSpeichern_1.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent arg0) {
+                    laden();
+                }
+            });
+        mnDatei.add(mntmSpeichern_1);
 
         JMenu mnHilfe = new JMenu("Hilfe");
         menuBar.add(mnHilfe);
@@ -83,15 +87,15 @@ public class gui_awt {
 
         JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
         tabbedPane.setToolTipText("Log");
-        tabbedPane.setBounds(10, 10, 400, 945);
+        tabbedPane.setBounds(10, 10, 550, 945);
         frmArztpraxisBeta.getContentPane().add(tabbedPane);
 
-        TextArea textAream_2 = new TextArea();
+        textAream_2 = new TextArea();
         textAream_2.setEditable(false);
         tabbedPane.addTab("Log", null, textAream_2, null);
         tabbedPane.setEnabledAt(0, true);
 
-        TextArea textAream_1 = new TextArea();
+        textAream_1 = new TextArea();
         textAream_1.setEditable(false);
         tabbedPane.addTab("Status", null, textAream_1, null);
         tabbedPane.setEnabledAt(1, true);
@@ -104,7 +108,7 @@ public class gui_awt {
                     textAream_1.setText(rez.statusAusgabe());
                 }
             });
-        btnNewButton.setBounds(420, 30, 354, 32);
+        btnNewButton.setBounds(570, 30, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnNewButton);
 
         JButton btnBewegeArzt = new JButton("Bewege Arzt\r\n");
@@ -115,7 +119,7 @@ public class gui_awt {
                     textAream_1.setText(rez.statusAusgabe());
                 }
             });
-        btnBewegeArzt.setBounds(420, 73, 354, 32);
+        btnBewegeArzt.setBounds(570, 73, 354, 32);  
         frmArztpraxisBeta.getContentPane().add(btnBewegeArzt);
 
         JButton btnQueueZuWartezimmer = new JButton("Queue zu Wartezimmer");
@@ -126,7 +130,7 @@ public class gui_awt {
                     textAream_1.setText(rez.statusAusgabe());
                 }
             });
-        btnQueueZuWartezimmer.setBounds(420, 116, 354, 32);
+        btnQueueZuWartezimmer.setBounds(570, 116, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnQueueZuWartezimmer);
 
         JButton btnWartezimmerZuBehandlungsraum = new JButton("Wartezimmer zu Behandlungsraum\r\n");
@@ -137,7 +141,7 @@ public class gui_awt {
                     textAream_1.setText(rez.statusAusgabe());
                 }
             });
-        btnWartezimmerZuBehandlungsraum.setBounds(420, 159, 354, 32);
+        btnWartezimmerZuBehandlungsraum.setBounds(570, 159, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnWartezimmerZuBehandlungsraum);
 
         JButton btnBehandlungsraumLeeren = new JButton("Behandlungsraum Leeren\r\n");
@@ -148,7 +152,7 @@ public class gui_awt {
                     textAream_1.setText(rez.statusAusgabe());
                 }
             });
-        btnBehandlungsraumLeeren.setBounds(420, 202, 354, 32);
+        btnBehandlungsraumLeeren.setBounds(570, 202, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnBehandlungsraumLeeren);
 
         JButton btnBehandeln = new JButton("Behandeln");
@@ -159,7 +163,7 @@ public class gui_awt {
                     textAream_1.setText(rez.statusAusgabe());
                 }
             });
-        btnBehandeln.setBounds(420, 245, 354, 32);
+        btnBehandeln.setBounds(570, 245, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnBehandeln);
 
         JButton btnLogAusgeben = new JButton("Log ausgeben\r\n");
@@ -169,7 +173,7 @@ public class gui_awt {
 
                 }
             });
-        btnLogAusgeben.setBounds(420, 288, 354, 32);
+        btnLogAusgeben.setBounds(570, 288, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnLogAusgeben);
 
         JButton btnStatusAusgeben = new JButton("Status ausgeben\r\n");
@@ -180,7 +184,7 @@ public class gui_awt {
 
                 }
             });
-        btnStatusAusgeben.setBounds(420, 331, 354, 32);
+        btnStatusAusgeben.setBounds(570, 331, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnStatusAusgeben);
 
         JButton btnIstEinBehandlungsraum = new JButton("Ist ein Behandlungsraum besetzt ?");
@@ -199,7 +203,7 @@ public class gui_awt {
 
                 }
             });
-        btnIstEinBehandlungsraum.setBounds(420, 374, 354, 32);
+        btnIstEinBehandlungsraum.setBounds(570, 374, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnIstEinBehandlungsraum);
 
         JButton btnIstEinWartezimmer = new JButton("Ist ein Wartezimmer besetzt ?\r\n");
@@ -219,15 +223,17 @@ public class gui_awt {
 
                 }
             });
-        btnIstEinWartezimmer.setBounds(420, 417, 354, 32);
+        btnIstEinWartezimmer.setBounds(570, 417, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnIstEinWartezimmer);
 
         JButton btnClear = new JButton("Clear\r\n");
         btnClear.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
+                    textAream_2.setText("");
+                    textAream_1.setText("");  
                 }
             });
-        btnClear.setBounds(420, 460, 354, 32);
+        btnClear.setBounds(570, 460, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnClear);
     }
 
@@ -296,19 +302,40 @@ public class gui_awt {
         frmPopup.getContentPane().add(btnNewButton);
     }
 
+    public void laden()
+    {
+        String currDir;
+        FileFilter filter = new FileNameExtensionFilter("Rezeption", "rez");
+        JFileChooser chooser = new JFileChooser();  
+        ObjektLesen o = new ObjektLesen();
+        chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        chooser.addChoosableFileFilter(filter);
+        int returnVal = chooser.showOpenDialog(null);
+        if(returnVal == JFileChooser.APPROVE_OPTION) {
+
+            currDir = chooser.getSelectedFile().getAbsolutePath();
+
+            Rezeption a =  o.lesen(currDir);
+            rez = a;
+            textAream_2.setText(rez.logAusgeben());
+            textAream_1.setText(rez.statusAusgabe());
+
+        }
+    }
+
     public void speichern()
     {
         String currDir;
         JFileChooser chooser = new JFileChooser();
-        OkjektSchreiben o = new OkjektSchreiben();
+        ObjektSchreiben o = new ObjektSchreiben();
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        int returnVal = chooser.showOpenDialog(null);
+        int returnVal = chooser.showSaveDialog(null);
         if(returnVal == JFileChooser.APPROVE_OPTION) {
-            
-             currDir = chooser.getSelectedFile().getAbsolutePath();
-            
+
+            currDir = chooser.getSelectedFile().getAbsolutePath();
+
             o.schreiben(rez,currDir);
-            
+
         }
 
     }

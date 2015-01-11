@@ -1,11 +1,12 @@
 import java.io.*;
 
-public class OkjektSchreiben {
+public class ObjektSchreiben {
 
     public void schreiben(Rezeption t,String ort) {
-        ort = ort+ "Rezeption.dat";
+        ort = ort+ "\\Rezeption.rez";
+        System.out.println(ort);
         try {
-            FileOutputStream fileOut = new FileOutputStream("Rezeptio.dat");
+            FileOutputStream fileOut = new FileOutputStream(ort);
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(t);
             out.close();
