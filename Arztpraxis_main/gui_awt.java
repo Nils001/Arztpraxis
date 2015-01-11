@@ -235,7 +235,8 @@ public class gui_awt {
                     textAream_1.setText("");  
                 }
             });
-        btnClear.setBounds(570, 498, 354, 32);
+        btnClear.setBounds(570, 503, 354, 32);
+
         frmArztpraxisBeta.getContentPane().add(btnClear);
 
         JButton btnSimulation = new JButton("Simulation");
@@ -258,6 +259,7 @@ public class gui_awt {
                 }
             });
         btnSimulation.setBounds(570, 460, 354, 32);
+
         frmArztpraxisBeta.getContentPane().add(btnSimulation);
     }
 
