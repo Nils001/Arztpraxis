@@ -1,4 +1,4 @@
-
+/*GUI von Nils Stallkamp*/
 import javax.swing.*;
 import java.awt.*;
 import java.text.NumberFormat;
@@ -7,6 +7,8 @@ import java.text.NumberFormat;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.border.*;
+import java.awt.BorderLayout;
 
 public class gui_awt {
     private JFrame frmArztpraxisBeta;
@@ -15,7 +17,7 @@ public class gui_awt {
     private JFrame frmPopup;
     private Rezeption rez;
     private JOptionPane popup;
-    private credits credits;
+    private Credits credits;
     /**
      * Launch the application.
      */
@@ -46,7 +48,7 @@ public class gui_awt {
         frmArztpraxisBeta = new JFrame();
         frmArztpraxisBeta.setVisible(true);
         frmArztpraxisBeta.setTitle("Arztpraxis Beta");
-        frmArztpraxisBeta.setBounds(100, 100, 950, 1022);
+        frmArztpraxisBeta.setBounds(0,0,950, 1022);
         frmArztpraxisBeta.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JMenuBar menuBar = new JMenuBar();
@@ -78,7 +80,7 @@ public class gui_awt {
         JMenuItem menuItem = new JMenuItem("Credits");
         menuItem.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    credits = new credits();
+                    credits = new  Credits();
                 }
             });
 
@@ -233,8 +235,30 @@ public class gui_awt {
                     textAream_1.setText("");  
                 }
             });
-        btnClear.setBounds(570, 460, 354, 32);
+        btnClear.setBounds(570, 498, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnClear);
+
+        JButton btnSimulation = new JButton("Simulation");
+        btnSimulation.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    String eingabe = JOptionPane.showInputDialog(null,"Wie viele Patienten ?","Simulation",JOptionPane.PLAIN_MESSAGE);
+
+                    try{
+                        int n = Integer.parseInt(eingabe);
+                        String[] a =  rez.simulation(n);
+                        textAream_2.setText(a[0]);
+                        textAream_1.setText(a[1]);  
+                    }
+                    catch(NumberFormatException b)
+                    {
+                        JOptionPane.showMessageDialog(popup, b);
+                        return;
+                    }
+
+                }
+            });
+        btnSimulation.setBounds(570, 460, 354, 32);
+        frmArztpraxisBeta.getContentPane().add(btnSimulation);
     }
 
     private void initialize1() {

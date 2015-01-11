@@ -17,7 +17,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class credits extends JFrame {
+public class Credits extends JFrame {
 
 	private JPanel contentPane;
 
@@ -28,7 +28,7 @@ public class credits extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					credits frame = new credits();
+					Credits frame = new Credits();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +40,7 @@ public class credits extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public credits() {
+	public Credits() {
 		setTitle("Credits");
 		setResizable(false);
 		setVisible(true);

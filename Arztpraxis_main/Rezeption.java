@@ -1,5 +1,5 @@
 import java.io.Serializable;
- 
+
 public class Rezeption implements Serializable 
 {
     private String log = "";
@@ -274,8 +274,9 @@ public class Rezeption implements Serializable
         return false;
     }
 
-    public void simulation(int anzahl)
+    public String[] simulation(int anzahl)
     {
+        log = log + "Simulation ::::::::::::::::::::::::::::::::::::::::::::::::";
         for(int a = 0; a < anzahl; a++)                            
         {
             neuerPatient();
@@ -307,8 +308,9 @@ public class Rezeption implements Serializable
                 queueZuWartezimmer();
             }
         }
-
-        System.out.println(logAusgeben());
+        
+        
+        return new String[]{ log, statusAusgabe() };
     }
 }
 
