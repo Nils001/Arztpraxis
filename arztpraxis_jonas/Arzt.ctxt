@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.params=
-comment0.target=Arzt()
-comment1.params=a
-comment1.target=void\ setWo(Raum)
-comment2.params=
-comment2.target=Raum\ getWo()
-numComments=3
