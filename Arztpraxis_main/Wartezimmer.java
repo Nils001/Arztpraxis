@@ -60,7 +60,7 @@ public class Wartezimmer implements Serializable
 
     public Prioritaet gibErsten()
     {
-        liste.toFirst();
+        liste.toLast();
         Prioritaet object = (Prioritaet)liste.getObject();
         return object;
     }
