@@ -77,6 +77,15 @@ public class gui_awt
             }
         );
 
+        JMenuItem mntmNeu = new JMenuItem("Neu");
+        mntmNeu.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent arg0) {
+                    frmArztpraxisBeta.dispose();
+                    initialize1();
+                }
+            });
+        mnDatei.add(mntmNeu);
+
         mnDatei.add(mntmSpeichern);
         JMenuItem mntmSpeichern_1 = new JMenuItem("Laden");
 
@@ -368,23 +377,27 @@ public class gui_awt
             {
                 public void actionPerformed(ActionEvent e) 
                 {
-                    if(textField.getText()!="" && textField_1.getText()!="" && textField_2.getText()!="" )
-                    {
-                        int aa = Integer.parseInt(textField.getText());
-                        int bb = Integer.parseInt(textField_1.getText());
-                        int cc = Integer.parseInt(textField_2.getText());
+                    try{
+                        if(textField.getText()!="" && textField_1.getText()!="" && textField_2.getText()!="" )
+                        {
+                            int aa = Integer.parseInt(textField.getText());
+                            int bb = Integer.parseInt(textField_1.getText());
+                            int cc = Integer.parseInt(textField_2.getText());
 
-                        if(aa !=0 && bb!=0 && cc!=0)
-                        {
-                            rez = new Rezeption(aa,bb,cc);
-                            frmPopup.dispose();
-                            initialize();
+                            if(aa !=0 && bb!=0 && cc!=0)
+                            {
+                                rez = new Rezeption(aa,bb,cc);
+                                frmPopup.dispose();
+                                initialize();
+                            }
+                            else
+                            {
+                                frmPopup.dispose();
+                                initialize1();
+                            }
                         }
-                        else
-                        {
-                            frmPopup.dispose();
-                            initialize1();
-                        }
+                    }catch(Exception a){
+                       JOptionPane.showMessageDialog(popup, a); 
                     }
                 }
             }
