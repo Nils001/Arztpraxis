@@ -27,7 +27,7 @@ public class Wartezimmer implements Serializable
                 while (liste.hasAccess())
                 {
                     Prioritaet p = (Prioritaet)liste.getObject();
-                    if (a.isLess(p))
+                    if (a.isGreater(p))
                     {
                         liste.insert(a);
                         sindBesetzt = sindBesetzt + 1;
@@ -60,7 +60,7 @@ public class Wartezimmer implements Serializable
 
     public Prioritaet gibErsten()
     {
-        liste.toLast();
+        liste.toFirst();
         Prioritaet object = (Prioritaet)liste.getObject();
         return object;
     }
@@ -95,10 +95,10 @@ public class Wartezimmer implements Serializable
                 Integer meinInteger = new Integer(i);
                 String prioritaet = meinInteger.toString(); 
 
-               // System.out.println(prioritaet+ " " +krankheit);
-               //von Nils 
-               Patient b = (Patient)liste.getObject();
-               a = a+ f+". "+  b +"\n" ;
+                // System.out.println(prioritaet+ " " +krankheit);
+                //von Nils 
+                Patient b = (Patient)liste.getObject();
+                a = a+ f+". "+  b +"\n" ;
 
                 liste.next();
             }
