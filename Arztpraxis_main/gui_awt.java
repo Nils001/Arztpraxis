@@ -10,7 +10,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.border.*;
 import java.awt.BorderLayout;
 
-public class gui_awt {
+public class gui_awt 
+{
     private JFrame frmArztpraxisBeta;
     private TextArea textAream_1;
     private TextArea textAream_2;
@@ -21,13 +22,19 @@ public class gui_awt {
     /**
      * Launch the application.
      */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-                public void run() {
-                    try {
+    public static void main(String[] args) 
+    {
+        EventQueue.invokeLater(new Runnable() 
+            {
+                public void run() 
+                {
+                    try 
+                    {
                         gui_awt window = new gui_awt();
                         window.frmPopup.setVisible(true);
-                    } catch (Exception e) {
+                    } 
+                    catch (Exception e) 
+                    {
                         e.printStackTrace();
                     }
                 }
@@ -37,14 +44,16 @@ public class gui_awt {
     /**
      * Create the application.
      */
-    public gui_awt() {
+    public gui_awt() 
+    {
         initialize1();
     }
 
     /**
      * Initialize the contents of the frame.
      */
-    private void initialize() {
+    private void initialize() 
+    {
         frmArztpraxisBeta = new JFrame();
         frmArztpraxisBeta.setVisible(true);
         frmArztpraxisBeta.setTitle("Arztpraxis Beta");
@@ -54,35 +63,44 @@ public class gui_awt {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setMargin(new Insets(2, 2, 2, 0));
         frmArztpraxisBeta.setJMenuBar(menuBar);
-
         JMenu mnDatei = new JMenu("Datei");
         menuBar.add(mnDatei);
-
         JMenuItem mntmSpeichern = new JMenuItem("Speichern");
-        mntmSpeichern.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+
+        mntmSpeichern.addActionListener(new ActionListener() 
+            {
+                public void actionPerformed(ActionEvent e) 
+                {
                     speichern();
                 }
-            });
-        mnDatei.add(mntmSpeichern);
+            }
+        );
 
+        mnDatei.add(mntmSpeichern);
         JMenuItem mntmSpeichern_1 = new JMenuItem("Laden");
-        mntmSpeichern_1.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent arg0) {
+
+        mntmSpeichern_1.addActionListener(new ActionListener() 
+            {
+                public void actionPerformed(ActionEvent arg0) 
+                {
                     laden();
                 }
-            });
-        mnDatei.add(mntmSpeichern_1);
+            }
+        );
 
+        mnDatei.add(mntmSpeichern_1);
         JMenu mnHilfe = new JMenu("Hilfe");
         menuBar.add(mnHilfe);
-
         JMenuItem menuItem = new JMenuItem("Credits");
-        menuItem.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+
+        menuItem.addActionListener(new ActionListener() 
+            {
+                public void actionPerformed(ActionEvent e) 
+                {
                     credits = new  Credits();
                 }
-            });
+            }
+        );
 
         mnHilfe.add(menuItem);
         frmArztpraxisBeta.getContentPane().setLayout(null);
@@ -103,95 +121,128 @@ public class gui_awt {
         tabbedPane.setEnabledAt(1, true);
 
         JButton btnNewButton = new JButton("Patient hinzuf\u00FCgen");
-        btnNewButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+
+        btnNewButton.addActionListener(new ActionListener() 
+            {
+                public void actionPerformed(ActionEvent e) 
+                {
                     rez.neuerPatient();
                     textAream_2.setText(rez.logAusgeben());
                     textAream_1.setText(rez.statusAusgabe());
                 }
-            });
+            }
+        );
+
         btnNewButton.setBounds(570, 30, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnNewButton);
-
         JButton btnBewegeArzt = new JButton("Bewege Arzt\r\n");
-        btnBewegeArzt.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+
+        btnBewegeArzt.addActionListener(new ActionListener() 
+            {
+                public void actionPerformed(ActionEvent e) 
+                {
                     rez.bewegeArzt();
                     textAream_2.setText(rez.logAusgeben());
                     textAream_1.setText(rez.statusAusgabe());
                 }
-            });
+            }
+        );
+
         btnBewegeArzt.setBounds(570, 73, 354, 32);  
         frmArztpraxisBeta.getContentPane().add(btnBewegeArzt);
-
         JButton btnQueueZuWartezimmer = new JButton("Queue zu Wartezimmer");
-        btnQueueZuWartezimmer.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+
+        btnQueueZuWartezimmer.addActionListener(new ActionListener() 
+            {
+                public void actionPerformed(ActionEvent e) 
+                {
                     rez.queueZuWartezimmer();
                     textAream_2.setText(rez.logAusgeben());
                     textAream_1.setText(rez.statusAusgabe());
                 }
-            });
+            }
+        );
+
         btnQueueZuWartezimmer.setBounds(570, 116, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnQueueZuWartezimmer);
-
         JButton btnWartezimmerZuBehandlungsraum = new JButton("Wartezimmer zu Behandlungsraum\r\n");
-        btnWartezimmerZuBehandlungsraum.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+
+        btnWartezimmerZuBehandlungsraum.addActionListener(new ActionListener() 
+            {
+                public void actionPerformed(ActionEvent e) 
+                {
                     rez.wartezimmerZuBehandlungsraum();
                     textAream_2.setText(rez.logAusgeben());
                     textAream_1.setText(rez.statusAusgabe());
                 }
-            });
+            }
+        );
+
         btnWartezimmerZuBehandlungsraum.setBounds(570, 159, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnWartezimmerZuBehandlungsraum);
-
         JButton btnBehandlungsraumLeeren = new JButton("Behandlungsraum Leeren\r\n");
-        btnBehandlungsraumLeeren.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+
+        btnBehandlungsraumLeeren.addActionListener(new ActionListener() 
+            {
+                public void actionPerformed(ActionEvent e) 
+                {
                     rez.behandlungeraumLeeren();
                     textAream_2.setText(rez.logAusgeben());
                     textAream_1.setText(rez.statusAusgabe());
                 }
-            });
+            }
+        );
+
         btnBehandlungsraumLeeren.setBounds(570, 202, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnBehandlungsraumLeeren);
-
         JButton btnBehandeln = new JButton("Behandeln");
-        btnBehandeln.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+
+        btnBehandeln.addActionListener(new ActionListener() 
+            {
+                public void actionPerformed(ActionEvent e) 
+                {
                     rez.behandeln();
                     textAream_2.setText(rez.logAusgeben());
                     textAream_1.setText(rez.statusAusgabe());
                 }
-            });
+            }
+        );
+
         btnBehandeln.setBounds(570, 245, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnBehandeln);
-
         JButton btnLogAusgeben = new JButton("Log ausgeben\r\n");
-        btnLogAusgeben.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+
+        btnLogAusgeben.addActionListener(new ActionListener() 
+            {
+                public void actionPerformed(ActionEvent e) 
+                {
                     textAream_2.setText(rez.logAusgeben());
 
                 }
-            });
+            }
+        );
+
         btnLogAusgeben.setBounds(570, 288, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnLogAusgeben);
-
         JButton btnStatusAusgeben = new JButton("Status ausgeben\r\n");
-        btnStatusAusgeben.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
 
+        btnStatusAusgeben.addActionListener(new ActionListener() 
+            {
+                public void actionPerformed(ActionEvent e) 
+                {
                     textAream_1.setText(rez.statusAusgabe());
-
                 }
-            });
+            }
+        );
+
         btnStatusAusgeben.setBounds(570, 331, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnStatusAusgeben);
-
         JButton btnIstEinBehandlungsraum = new JButton("Ist ein Behandlungsraum besetzt ?");
-        btnIstEinBehandlungsraum.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+
+        btnIstEinBehandlungsraum.addActionListener(new ActionListener() 
+            {
+                public void actionPerformed(ActionEvent e) 
+                {
                     boolean a = rez.behandlungsraumBesetzt();
                     if (a)
                     {
@@ -200,17 +251,20 @@ public class gui_awt {
                     else
                     {
                         JOptionPane.showMessageDialog(popup, "Alle Behandlungszimmer sind leer!");
-
                     }
 
                 }
-            });
+            }
+        );
+
         btnIstEinBehandlungsraum.setBounds(570, 374, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnIstEinBehandlungsraum);
-
         JButton btnIstEinWartezimmer = new JButton("Ist ein Wartezimmer besetzt ?\r\n");
-        btnIstEinWartezimmer.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+
+        btnIstEinWartezimmer.addActionListener(new ActionListener() 
+            {
+                public void actionPerformed(ActionEvent e) 
+                {
 
                     boolean a = rez.wartezimmerBesetzt();
                     if (a)
@@ -220,28 +274,34 @@ public class gui_awt {
                     else
                     {
                         JOptionPane.showMessageDialog(popup, "Alle Wartezimmer sind leer!");
-
                     }
 
                 }
-            });
+            }
+        );
+
         btnIstEinWartezimmer.setBounds(570, 417, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnIstEinWartezimmer);
-
         JButton btnClear = new JButton("Clear\r\n");
-        btnClear.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+
+        btnClear.addActionListener(new ActionListener() 
+            {
+                public void actionPerformed(ActionEvent e) 
+                {
                     textAream_2.setText("");
                     textAream_1.setText("");  
                 }
-            });
+            }
+        );
+
         btnClear.setBounds(570, 503, 354, 32);
-
         frmArztpraxisBeta.getContentPane().add(btnClear);
-
         JButton btnSimulation = new JButton("Simulation");
-        btnSimulation.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+
+        btnSimulation.addActionListener(new ActionListener() 
+            {
+                public void actionPerformed(ActionEvent e) 
+                {
                     String eingabe = JOptionPane.showInputDialog(null,"Wie viele Patienten ?","Simulation",JOptionPane.PLAIN_MESSAGE);
 
                     try{
@@ -257,13 +317,15 @@ public class gui_awt {
                     }
 
                 }
-            });
-        btnSimulation.setBounds(570, 460, 354, 32);
+            }
+        );
 
+        btnSimulation.setBounds(570, 460, 354, 32);
         frmArztpraxisBeta.getContentPane().add(btnSimulation);
     }
 
-    private void initialize1() {
+    private void initialize1() 
+    {
         frmPopup = new JFrame();
         frmPopup.setResizable(false);
         frmPopup.setVisible(true);
@@ -300,13 +362,17 @@ public class gui_awt {
         frmPopup.getContentPane().add(lblPltzeProWartezimmer);
 
         JButton btnNewButton = new JButton("Start !");
-        btnNewButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+
+        btnNewButton.addActionListener(new ActionListener()         
+            {
+                public void actionPerformed(ActionEvent e) 
+                {
                     if(textField.getText()!="" && textField_1.getText()!="" && textField_2.getText()!="" )
                     {
                         int aa = Integer.parseInt(textField.getText());
                         int bb = Integer.parseInt(textField_1.getText());
                         int cc = Integer.parseInt(textField_2.getText());
+
                         if(aa !=0 && bb!=0 && cc!=0)
                         {
                             rez = new Rezeption(aa,bb,cc);
@@ -315,15 +381,14 @@ public class gui_awt {
                         }
                         else
                         {
-
                             frmPopup.dispose();
-
                             initialize1();
                         }
                     }
                 }
+            }
+        );
 
-            });
         btnNewButton.setBounds(10, 146, 524, 42);
         frmPopup.getContentPane().add(btnNewButton);
     }
@@ -337,15 +402,14 @@ public class gui_awt {
         chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         chooser.addChoosableFileFilter(filter);
         int returnVal = chooser.showOpenDialog(null);
-        if(returnVal == JFileChooser.APPROVE_OPTION) {
 
+        if(returnVal == JFileChooser.APPROVE_OPTION) 
+        {
             currDir = chooser.getSelectedFile().getAbsolutePath();
-
             Rezeption a =  o.lesen(currDir);
             rez = a;
             textAream_2.setText(rez.logAusgeben());
             textAream_1.setText(rez.statusAusgabe());
-
         }
     }
 
@@ -356,13 +420,11 @@ public class gui_awt {
         ObjektSchreiben o = new ObjektSchreiben();
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int returnVal = chooser.showSaveDialog(null);
-        if(returnVal == JFileChooser.APPROVE_OPTION) {
 
+        if(returnVal == JFileChooser.APPROVE_OPTION) 
+        {
             currDir = chooser.getSelectedFile().getAbsolutePath();
-
             o.schreiben(rez,currDir);
-
         }
-
     }
 }

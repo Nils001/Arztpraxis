@@ -8,7 +8,7 @@ public class Patient extends Mensch
     {
         super(1);
 
-        this.brauchRoentgen = false;
+        
         Random r = new Random();     
         int a = r.nextInt(4);
         int b = r.nextInt(5);
@@ -18,13 +18,11 @@ public class Patient extends Mensch
             switch(b)
             {       
                 case 0:
-                this.diagnose = "Bruch";
-                this.brauchRoentgen = true;
+                this.diagnose = "Bruch";                
                 break;
 
                 case 1:
-                this.diagnose = "Ab";
-                this.brauchRoentgen = true;
+                this.diagnose = "Ab";               
                 break;
 
                 case 2:
@@ -67,12 +65,10 @@ public class Patient extends Mensch
 
                 case 4:
                 this.diagnose = "Quetschung";
-                this.brauchRoentgen = true;
                 break;
 
                 case 5:
                 this.diagnose = "Ausgekugelt";
-                this.brauchRoentgen = true;
                 break;
             }
         }
