@@ -124,7 +124,7 @@ public class Rezeption implements Serializable
                 {
                     behandlungszimmer[i].loeschen();
                     abgang.enqueue(a);
-                    log = log + "Patient " +a+ " wurde aus Behandlungszimmer " +i+ " geholt und der Abgang Queue hinzugefuegt. \n";
+                    log = log + "Patient " +a+ " hat die Praxis verlassen. \n";
                     return;
                 }
                 else
