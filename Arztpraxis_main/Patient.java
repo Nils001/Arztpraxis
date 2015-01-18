@@ -1,10 +1,8 @@
 import java.util.Random;
 public class Patient extends Mensch
 {
-
     private String krankheitsstatus;
     private String diagnose;
-    private boolean brauchRoentgen;
 
     public Patient()
     {

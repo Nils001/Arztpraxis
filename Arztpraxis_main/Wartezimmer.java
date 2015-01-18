@@ -80,7 +80,7 @@ public class Wartezimmer implements Serializable
 
     public String ausgabe()
     {
-        String a = "Wartezimmer ist leer";
+        String a = "Wartezimmer ist leer.";
         if (!liste.isEmpty())
         {
             liste.toFirst();
@@ -95,10 +95,8 @@ public class Wartezimmer implements Serializable
                 Integer meinInteger = new Integer(i);
                 String prioritaet = meinInteger.toString(); 
 
-                // System.out.println(prioritaet+ " " +krankheit);
-                //von Nils 
                 Patient b = (Patient)liste.getObject();
-                a = a+ f+". "+  b +"\n" ;
+                a = a + f + ". " +b+ "\n" ;
 
                 liste.next();
             }
