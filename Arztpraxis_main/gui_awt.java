@@ -18,7 +18,7 @@ public class gui_awt
     private JFrame frmPopup;
     private Rezeption rez;
     private JOptionPane popup;
-    private Credits credits;
+    private credits credits;
     /**
      * Launch the application.
      */
@@ -107,7 +107,7 @@ public class gui_awt
             {
                 public void actionPerformed(ActionEvent e) 
                 {
-                    credits = new  Credits();
+                    credits = new  credits();
                 }
             }
         );
