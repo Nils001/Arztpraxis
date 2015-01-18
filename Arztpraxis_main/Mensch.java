@@ -13,6 +13,7 @@ public abstract class Mensch extends Prioritaet
     {
         super(p);
 
+        //Patient bekommt einen von 400 verschiedenen Namen
         String vorname = "";
         String nachname = "";
         Random r = new Random();     

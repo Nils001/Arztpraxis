@@ -145,8 +145,9 @@ public class Rezeption implements Serializable
 
             behandlungszimmer[a].diagnostizieren();
             String b = behandlungszimmer[a].getpDiagnose();
-            log = log + "Patient in Behandlungszimmer "+a+ " behandelt. \n";
-            log = log + "Der Patient hat " +c.getDiagnose()+ ". \n";
+            log = log +"\n";
+            log = log + "Der Patient in Behandlungszimmer "+a+ " wurde behandelt. \n";
+            log = log + "Der Patient " +c.getDiagnose()+ ". \n";
 
             behandlungszimmer[a].loeschen();
             abgang.enqueue(c);

@@ -8,9 +8,8 @@ public class Patient extends Mensch
     {
         super(1);
 
-        
         Random r = new Random();     
-        int a = r.nextInt(4);
+        int a = r.nextInt(6);
         int b = r.nextInt(5);
         if (a == 0)
         {
@@ -18,27 +17,27 @@ public class Patient extends Mensch
             switch(b)
             {       
                 case 0:
-                this.diagnose = "Bruch";                
+                this.diagnose = "hat einen Bruch";                
                 break;
 
                 case 1:
-                this.diagnose = "Ab";               
+                this.diagnose = "hat etwas verloren";               
                 break;
 
                 case 2:
-                this.diagnose = "Herzstillstand";
+                this.diagnose = "hatte einen Herzstillstand";
                 break;
 
                 case 3:
-                this.diagnose = "Bewusstlos";
+                this.diagnose = "war Bewusstlos";
                 break;               
 
                 case 4:
-                this.diagnose = "Schlaganfall";
+                this.diagnose = "hatte Schlaganfall";
                 break;
 
                 case 5:
-                this.diagnose = "Atemstillstand";
+                this.diagnose = "hatte einen Atemstillstand";
                 break;
             }
         }
@@ -48,27 +47,27 @@ public class Patient extends Mensch
             switch(b)
             {
                 case 0:
-                this.diagnose = "Platzwunde";
+                this.diagnose = "hatte eine Platzwunde";
                 break;
 
                 case 1:
-                this.diagnose = "Schirfwunde";
+                this.diagnose = "hatte eine Schirfwunde";
                 break;
 
                 case 2:
-                this.diagnose = "Schnittwunde";
+                this.diagnose = "hatte eine Schnittwunde";
                 break;
 
                 case 3:
-                this.diagnose = "Brandwunde";
+                this.diagnose = "hatte eine Brandwunde";
                 break;
 
                 case 4:
-                this.diagnose = "Quetschung";
+                this.diagnose = "hatte eine Quetschung";
                 break;
 
                 case 5:
-                this.diagnose = "Ausgekugelt";
+                this.diagnose = "hatte etwas Ausgekugelt";
                 break;
             }
         }
@@ -78,27 +77,27 @@ public class Patient extends Mensch
             switch(b)
             {
                 case 0:
-                this.diagnose = "Malaria";
+                this.diagnose = "hatte Malaria";
                 break;
 
                 case 1:
-                this.diagnose = "Ebola";
+                this.diagnose = "hatte Ebola";
                 break;
 
                 case 2:
-                this.diagnose = "Pest";
+                this.diagnose = "hatte die Pest";
                 break;
 
                 case 3:
-                this.diagnose = "Pocken";
+                this.diagnose = "hatte Pocken";
                 break;
 
                 case 4:
-                this.diagnose = "Gelbfieber";
+                this.diagnose = "hatte Gelbfieber";
                 break;
 
                 case 5:
-                this.diagnose = "Cholera";
+                this.diagnose = "hatte Cholera";
                 break;
             }
         }
@@ -108,27 +107,27 @@ public class Patient extends Mensch
             switch(b)
             {
                 case 0:
-                this.diagnose = "AIDS";
+                this.diagnose = "hat AIDS";
                 break;
 
                 case 1:
-                this.diagnose = "Down-Syndrom";
+                this.diagnose = "hat das Down-Syndrom";
                 break;
 
                 case 2:
-                this.diagnose = "Rheuma";
+                this.diagnose = "hat Rheuma";
                 break;
 
                 case 3:
-                this.diagnose = "Alzheimer";
+                this.diagnose = "hat Alzheimer";
                 break;
 
                 case 4:
-                this.diagnose = "Parkinson";
+                this.diagnose = "hat Parkinson";
                 break;
 
                 case 5:
-                this.diagnose = "Epilepsie";
+                this.diagnose = "hat Epilepsie";
                 break;
             }
         }
@@ -138,29 +137,39 @@ public class Patient extends Mensch
             switch(b)
             {
                 case 0:
-                this.diagnose = "Husten";
+                this.diagnose = "hat Husten";
                 break;
 
                 case 1:
-                this.diagnose = "Erkaeltung";
+                this.diagnose = "hat eine Erkaeltung";
                 break;
 
                 case 2:
-                this.diagnose = "Haarausfall";
+                this.diagnose = "hat Haarausfall";
                 break;
 
                 case 3:
-                this.diagnose = "Schnupfen";
+                this.diagnose = "hat Schnupfen";
                 break;
 
                 case 4:
-                this.diagnose = "Erektionsstoerungen";
+                this.diagnose = "hat Erektionsstoerungen";
                 break;
 
                 case 5:
-                this.diagnose = "Migraene";
+                this.diagnose = "hatte Migraene";
                 break;                        
             }
+        }
+        else if (a == 5)
+        {
+            this.prioritaet = 6;
+            this.diagnose = "kam zur Regeluntersuchung";
+        }
+        else if (a == 6)
+        {
+            this.prioritaet = 7;
+            this.diagnose = "kam zu einer Sprechstunde";
         }
     }
 
@@ -188,5 +197,4 @@ public class Patient extends Mensch
     {
         return krankheitsstatus;
     }
-
 }
