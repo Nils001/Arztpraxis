@@ -33,7 +33,7 @@ public class Patient extends Mensch
                 break;               
 
                 case 4:
-                this.diagnose = "hatte Schlaganfall";
+                this.diagnose = "hatte einen Schlaganfall";
                 break;
 
                 case 5:
