@@ -52,7 +52,7 @@ public class Wartezimmer implements Serializable
     {
         if (!liste.isEmpty())
         {
-            liste.toFirst();
+            liste.toLast(); // Liste sortiert falschherum daher nimmt man den letzten
             liste.remove();
             sindBesetzt = sindBesetzt - 1;
         }
