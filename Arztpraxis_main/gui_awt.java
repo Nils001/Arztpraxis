@@ -38,7 +38,8 @@ public class gui_awt
                         e.printStackTrace();
                     }
                 }
-            });
+            }
+        );
     }
 
     /**

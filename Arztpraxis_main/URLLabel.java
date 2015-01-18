@@ -1,4 +1,3 @@
- 
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -14,32 +13,34 @@ import javax.swing.JLabel;
  *
  * @author ludovicianul
  */
-public class URLLabel extends JLabel {
-
+public class URLLabel extends JLabel 
+{
     private String url;
 
-    public URLLabel() {
+    public URLLabel() 
+    {
         this("","");
     }
 
-    public URLLabel(String label, String url) {
+    public URLLabel(String label, String url) 
+    {
         super(label);
 
         this.url = url;
         setForeground(Color.BLUE.darker());
-        setCursor(
-                new Cursor(Cursor.HAND_CURSOR));
-        addMouseListener(
-                new URLOpenAdapter());
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+        addMouseListener(new URLOpenAdapter());
     }
 
-    public void setURL(String url) {
+    public void setURL(String url) 
+    {
         this.url = url;
     }
 
     //this is used to underline the text
     @Override
-    protected void paintComponent(Graphics g) {
+    protected void paintComponent(Graphics g) 
+    {
         super.paintComponent(g);
 
         g.setColor(Color.blue);
@@ -47,22 +48,27 @@ public class URLLabel extends JLabel {
         Insets insets = getInsets();
 
         int left = insets.left;
-        if (getIcon() != null) {
+        if (getIcon() != null) 
+        {
             left += getIcon().getIconWidth() + getIconTextGap();
         }
 
-        g.drawLine(left, getHeight() - 1 - insets.bottom, (int) getPreferredSize().getWidth()
-                - insets.right, getHeight() - 1 - insets.bottom);
+        g.drawLine(left, getHeight() - 1 - insets.bottom, (int) getPreferredSize().getWidth() - insets.right, getHeight() - 1 - insets.bottom);
     }
 
-    private class URLOpenAdapter extends MouseAdapter {
-
+    private class URLOpenAdapter extends MouseAdapter 
+    {
         @Override
-        public void mouseClicked(MouseEvent e) {
-            if (Desktop.isDesktopSupported()) {
-                try {
+        public void mouseClicked(MouseEvent e) 
+        {
+            if (Desktop.isDesktopSupported()) 
+            {
+                try 
+                {
                     Desktop.getDesktop().browse(new URI(url));
-                } catch (Throwable t) {
+                } 
+                catch (Throwable t) 
+                {
                     //
                 }
             }
