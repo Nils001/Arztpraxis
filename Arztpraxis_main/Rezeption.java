@@ -85,30 +85,48 @@ public class Rezeption implements Serializable
     /*Der erste Patient im ersten Wartezimmer wird in den ersten freien Behandlungsraum gebracht*/
     public void wartezimmerZuBehandlungsraum()
     {
+        Prioritaetenschlange a = new Prioritaetenschlange();
+
         for(int i = 0; i < wartezimmer.length; i++)
         {
             if(wartezimmer[i].istBesetzt())
             {
-                Prioritaet a =  wartezimmer[i].gibErsten();
+                Prioritaet b =  wartezimmer[i].gibErsten();
+                a.hinzufuegen(b);
                 //log = log + "Patient "+a+" in Wartezimmer" +i+" gefunden \n";
-                for(int h = 0; h < behandlungszimmer.length; h++)
-                {
-                    if(!behandlungszimmer[h].istBesetzt())
-                    {
-                        behandlungszimmer[h].hinzufuegen((Patient) a);
-                        log = log + "Patient "+a+" wurde in Behandlungszimmer "+h+" hinzugefügt. \n";
-                        wartezimmer[i].loeschen();
-                        return;
-                    }
-                    if (h == behandlungszimmer.length - 1)
-                    {
-                        return;
-                    }
-                }
+
             }
         }
-        log = log + "Fehler beim hinzufügen des Partienten. \n";
-        log = log + "Entweder kein Patient gefunden oder kein freies Behandlunsgzimmer. \n";
+        if(!a.isEmpty()){
+            Patient b = (Patient) a.gibErsten();
+            for(int h = 0; h < behandlungszimmer.length; h++)
+            {
+                if(!behandlungszimmer[h].istBesetzt())
+                {
+                    behandlungszimmer[h].hinzufuegen((Patient) b);
+                    log = log + "Patient "+b+" wurde in Behandlungszimmer "+h+" hinzugefügt. \n";
+                    for(int i = 0; i < wartezimmer.length; i++)
+                    {
+                        Patient ab = (Patient) wartezimmer[i].gibErsten();
+                        if(b.equals(ab))
+                        {
+                            wartezimmer[i].loeschen();
+                            return;
+
+                        }
+
+                    }
+
+                }
+                if (h == behandlungszimmer.length - 1)
+                {
+                    return;
+                }
+            }
+        }else{
+            log = log + "Fehler beim hinzufügen des Partienten. \n";
+            log = log + "Entweder kein Patient gefunden oder kein freies Behandlunsgzimmer. \n";
+        }
     }
 
     /*Der erste Behandlungsraum der besetzt ist wird geleert falls der Patient bereits behandelt wurde*/
@@ -267,7 +285,7 @@ public class Rezeption implements Serializable
 
     public String[] simulation(int anzahl)
     {
-        log = log + "--------------------Simulation-------------------";
+        log = log + "--------------------Simulation------------------- \n";
         for(int a = 0; a < anzahl; a++)                             //erzeugt Patienten                          
         {
             neuerPatient();
@@ -299,7 +317,7 @@ public class Rezeption implements Serializable
                 queueZuWartezimmer();
             }
         }
-             
+
         return new String[]{ log, statusAusgabe() };
     }
 }
