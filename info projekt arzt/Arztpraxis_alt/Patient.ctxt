@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Patient()
+comment1.params=
+comment1.target=Krankheit\ getKrankheit()
+comment2.params=
+comment2.target=java.lang.String\ getDiagnose()
+comment3.params=
+comment3.target=int\ getPrioritaet()
+comment4.params=c
+comment4.target=void\ setKrankheitsstatus(java.lang.String)
+comment5.params=
+comment5.target=java.lang.String\ getKrankheitsstatus()
+numComments=6

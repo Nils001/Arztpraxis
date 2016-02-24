@@ -1,43 +1,48 @@
 import java.util.Random;
 public class Patient extends Mensch
 {
+
     private String krankheitsstatus;
     private String diagnose;
+    private boolean brauchRoentgen;
 
     public Patient()
     {
         super(1);
 
+        this.brauchRoentgen = false;
         Random r = new Random();     
-        int a = r.nextInt(7);
-        int b = r.nextInt(6);
+        int a = r.nextInt(4);
+        int b = r.nextInt(5);
         if (a == 0)
         {
             this.prioritaet = 1;
             switch(b)
             {       
                 case 0:
-                this.diagnose = "hat einen Bruch";                
+                this.diagnose = "Bruch";
+                this.brauchRoentgen = true;
                 break;
 
                 case 1:
-                this.diagnose = "hat etwas verloren";               
+                this.diagnose = "Ab";
+                this.brauchRoentgen = true;
                 break;
 
                 case 2:
-                this.diagnose = "hatte einen Herzstillstand";
+                this.diagnose = "Herzstillstand";
                 break;
 
                 case 3:
-                this.diagnose = "war Bewusstlos";
+                this.diagnose = "Bewusstlos";
                 break;               
 
                 case 4:
-                this.diagnose = "hatte einen Schlaganfall";
+                this.diagnose = "Schlaganfall";
                 break;
 
                 case 5:
-                this.diagnose = "hatte einen Atemstillstand";
+                this.diagnose = "Atemstillstand";
                 break;
             }
         }
@@ -47,27 +52,29 @@ public class Patient extends Mensch
             switch(b)
             {
                 case 0:
-                this.diagnose = "hatte eine Platzwunde";
+                this.diagnose = "Platzwunde";
                 break;
 
                 case 1:
-                this.diagnose = "hatte eine Schirfwunde";
+                this.diagnose = "Schirfwunde";
                 break;
 
                 case 2:
-                this.diagnose = "hatte eine Schnittwunde";
+                this.diagnose = "Schnittwunde";
                 break;
 
                 case 3:
-                this.diagnose = "hatte eine Brandwunde";
+                this.diagnose = "Brandwunde";
                 break;
 
                 case 4:
-                this.diagnose = "hatte eine Quetschung";
+                this.diagnose = "Quetschung";
+                this.brauchRoentgen = true;
                 break;
 
                 case 5:
-                this.diagnose = "hatte etwas Ausgekugelt";
+                this.diagnose = "Ausgekugelt";
+                this.brauchRoentgen = true;
                 break;
             }
         }
@@ -77,27 +84,27 @@ public class Patient extends Mensch
             switch(b)
             {
                 case 0:
-                this.diagnose = "hatte Malaria";
+                this.diagnose = "Malaria";
                 break;
 
                 case 1:
-                this.diagnose = "hatte Ebola";
+                this.diagnose = "Ebola";
                 break;
 
                 case 2:
-                this.diagnose = "hatte die Pest";
+                this.diagnose = "Pest";
                 break;
 
                 case 3:
-                this.diagnose = "hatte Pocken";
+                this.diagnose = "Pocken";
                 break;
 
                 case 4:
-                this.diagnose = "hatte Gelbfieber";
+                this.diagnose = "Gelbfieber";
                 break;
 
                 case 5:
-                this.diagnose = "hatte Cholera";
+                this.diagnose = "Cholera";
                 break;
             }
         }
@@ -107,27 +114,27 @@ public class Patient extends Mensch
             switch(b)
             {
                 case 0:
-                this.diagnose = "hat AIDS";
+                this.diagnose = "AIDS";
                 break;
 
                 case 1:
-                this.diagnose = "hat das Down-Syndrom";
+                this.diagnose = "Down-Syndrom";
                 break;
 
                 case 2:
-                this.diagnose = "hat Rheuma";
+                this.diagnose = "Rheuma";
                 break;
 
                 case 3:
-                this.diagnose = "hat Alzheimer";
+                this.diagnose = "Alzheimer";
                 break;
 
                 case 4:
-                this.diagnose = "hat Parkinson";
+                this.diagnose = "Parkinson";
                 break;
 
                 case 5:
-                this.diagnose = "hat Epilepsie";
+                this.diagnose = "Epilepsie";
                 break;
             }
         }
@@ -137,46 +144,34 @@ public class Patient extends Mensch
             switch(b)
             {
                 case 0:
-                this.diagnose = "hatte Husten";
+                this.diagnose = "Husten";
                 break;
 
                 case 1:
-                this.diagnose = "hatte eine Erkaeltung";
+                this.diagnose = "Erkaeltung";
                 break;
 
                 case 2:
-                this.diagnose = "hatte Haarausfall";
+                this.diagnose = "Haarausfall";
                 break;
 
                 case 3:
-                this.diagnose = "hatte Schnupfen";
+                this.diagnose = "Schnupfen";
                 break;
 
                 case 4:
-                this.diagnose = "hatte Erektionsstoerungen";
+                this.diagnose = "Erektionsstoerungen";
                 break;
 
                 case 5:
-                this.diagnose = "hatte Migraene";
+                this.diagnose = "Migraene";
                 break;                        
             }
         }
-        else if (a == 5)
-        {
-            this.prioritaet = 6;
-            this.diagnose = "kam zur Regeluntersuchung";
-        }
-        else if (a == 6)
-        {
-            this.prioritaet = 7;
-            this.diagnose = "kam zu einer Sprechstunde";
-        }
+
     }
 
-    public String toString()
-    {
-        return name + " @ Priorität " + prioritaet;
-    }
+    
 
     public String getDiagnose()
     {
@@ -197,4 +192,5 @@ public class Patient extends Mensch
     {
         return krankheitsstatus;
     }
+
 }

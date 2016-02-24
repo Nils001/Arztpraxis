@@ -34,7 +34,7 @@ public class Rezeption implements Serializable
         Patient a = new Patient();
         a.setKrankheitsstatus(null);
         ankunft.enqueue(a);
-        log = log + "Patient "+a+" in Queue Ankunft hinzugefuegt.  \n";
+        log = log + a + " ist an der Praxis angekommen.  \n";
     }
 
     /* Der Arzt wird in das nächste Behandlungszimmer gebraucht in dem ein Patient auf die Behandlung wartet*/
@@ -48,14 +48,14 @@ public class Rezeption implements Serializable
         {
             behandlungszimmer[a].setArzt(true);
             pArzt.setWo(a);
-            log = log + "Arzt ist jetz in Raum" +a+". \n";
+            log = log + "Arzt geht in Raum " +a+ ". \n";
         }
         else 
         {
             a=0;
             behandlungszimmer[a].setArzt(true);
             pArzt.setWo(a);
-            log = log + "Arzt ist jetz in Raum" +a+". \n";
+            log = log + "Arzt geht in Raum " +a+ ". \n";
         }
     }
 
@@ -71,7 +71,7 @@ public class Rezeption implements Serializable
                     wartezimmer[i].hinzufuegen((Prioritaet)ankunft.front());
                     Patient a =(Patient) ankunft.front();
                     ankunft.dequeue();
-                    log = log + "Patient "+a+" in Wartezimmer " +i+ " hinzugefuegt \n";
+                    log = log + a + " setzt sich ins Wartezimmer " +i+ " \n";
                     return;
                 }
             }
@@ -97,14 +97,15 @@ public class Rezeption implements Serializable
 
             }
         }
-        if(!a.isEmpty()){
+        if(!a.isEmpty())
+        {
             Patient b = (Patient) a.gibErsten();
             for(int h = 0; h < behandlungszimmer.length; h++)
             {
                 if(!behandlungszimmer[h].istBesetzt())
                 {
                     behandlungszimmer[h].hinzufuegen((Patient) b);
-                    log = log + "Patient "+b+" wurde in Behandlungszimmer "+h+" hinzugefügt. \n";
+                    log = log + b + " wurde Behandlungszimmer "+h+" zugewiesen. \n";
                     for(int i = 0; i < wartezimmer.length; i++)
                     {
                         Patient ab = (Patient) wartezimmer[i].gibErsten();
@@ -123,9 +124,11 @@ public class Rezeption implements Serializable
                     return;
                 }
             }
-        }else{
+        }
+        else
+        {
             log = log + "Fehler beim hinzufügen des Partienten. \n";
-            log = log + "Entweder kein Patient gefunden oder kein freies Behandlunsgzimmer. \n";
+            log = log + "Alle Wartezimmer sind leer! \n";
         }
     }
 
@@ -142,7 +145,7 @@ public class Rezeption implements Serializable
                 {
                     behandlungszimmer[i].loeschen();
                     abgang.enqueue(a);
-                    log = log + "Patient " +a+ " hat die Praxis verlassen. \n";
+                    log = log + a + " hat die Praxis verlassen. \n";
                     return;
                 }
                 else
@@ -162,14 +165,14 @@ public class Rezeption implements Serializable
             Patient c = behandlungszimmer[a].getPatient();
 
             behandlungszimmer[a].diagnostizieren();
-            String b = behandlungszimmer[a].getpDiagnose();
-            log = log +"\n";
-            log = log + "Der Patient in Behandlungszimmer "+a+ " wurde behandelt. \n";
+            String b = behandlungszimmer[a].getpDiagnose();            
+            log = log + c + " in Behandlungszimmer "+a+ " wurde behandelt. \n";
             log = log + "Der Patient " +c.getDiagnose()+ ". \n";
 
             behandlungszimmer[a].loeschen();
             abgang.enqueue(c);
-            log = log + "Patient " +c+ " wurde aus Behandlungszimmer " +a+ " geholt und der Abgang Queue hinzugefuegt. \n";
+            log = log + c + " hat die Praxis verlassen. \n";
+            log = log + "\n";
         }
     }
 
@@ -185,13 +188,13 @@ public class Rezeption implements Serializable
         int i = 0;
         Patient a;
         status = status + "Arzt befindet sich in Zimmer" +pArzt.getWo()+ " \n";
-        status = status +"\n";
+        status = status + "\n";
         status = status + "In der Ankunftsschlange befinden sich: \n ";
         Queue hilfe = new Queue();
         while(!ankunft.isEmpty())
         {
             a =(Patient) ankunft.front();
-            status = status + i +". "+ a +" \n";
+            status = status + i + ". " +a+ " \n";
             i++;
             hilfe.enqueue(ankunft.front());
             ankunft.dequeue();
@@ -202,7 +205,7 @@ public class Rezeption implements Serializable
             hilfe.dequeue();
 
         }
-        status = status +"\n";
+        status = status + "\n";
         for(i = 0; i < behandlungszimmer.length; i++)
         {
             if(behandlungszimmer[i].istBesetzt())
@@ -212,9 +215,9 @@ public class Rezeption implements Serializable
             }
             else
             {
-                status = status + "Behandlungszimmer " +i+ " ist frei. \n";
+                status = status + "Behandlungszimmer " +i+ " ist leer. \n";
             }
-            status = status +"\n";
+            status = status + "\n";
         }
         for(i=0;i<wartezimmer.length;i++)
         {
@@ -256,6 +259,19 @@ public class Rezeption implements Serializable
         return false;
     }
 
+    //true wenn min ein behandlungsraum leer ist
+    public boolean behandlungsraumLeer()
+    {
+        for(int i = 0; i < behandlungszimmer.length; i++)
+        {
+            if(!behandlungszimmer[i].istBesetzt())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /*false wenn keine Patienten in den Warteräumen sind,
     true wenn mindestens ein Patient in einem Warteraum ist.
      */
@@ -285,16 +301,20 @@ public class Rezeption implements Serializable
 
     public String[] simulation(int anzahl)
     {
-        log = log + "--------------------Simulation------------------- \n";
+        log = log + "-----------------------------------Simulation---------------------------------- \n";
+        log = log + "\n";
+        
         for(int a = 0; a < anzahl; a++)                             //erzeugt Patienten                          
         {
             neuerPatient();
         }
+        log = log + "\n";
 
         while (warteraumNichtVoll() && !ankunft.isEmpty())          //Ankunft zu Wartezimmer      
         {
             queueZuWartezimmer();   
         }
+        log = log + "\n";
 
         for(int b = 0; b < behandlungszimmer.length; b++)           //wartezimmer zu behandlungsraum
         {
@@ -303,18 +323,21 @@ public class Rezeption implements Serializable
                 wartezimmerZuBehandlungsraum();
             }
         }
+        log = log + "\n";
 
         while (wartezimmerBesetzt() || behandlungsraumBesetzt() || !ankunft.isEmpty())
         {
             bewegeArzt();
             behandeln();
-            if (!behandlungsraumBesetzt() && wartezimmerBesetzt())
+            if (behandlungsraumLeer() && wartezimmerBesetzt())
             {
                 wartezimmerZuBehandlungsraum();
+                log = log + "\n";
             }
             if (warteraumNichtVoll() && !ankunft.isEmpty())
             {
                 queueZuWartezimmer();
+                log = log + "\n";
             }
         }
 

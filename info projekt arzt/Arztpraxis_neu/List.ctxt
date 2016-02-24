@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=
+comment0.target=List()
+comment1.params=
+comment1.target=boolean\ isEmpty()
+comment10.params=pList
+comment10.target=void\ concat(List)
+comment11.params=
+comment11.target=void\ remove()
+comment2.params=
+comment2.target=boolean\ hasAccess()
+comment3.params=
+comment3.target=void\ next()
+comment4.params=
+comment4.target=void\ toFirst()
+comment5.params=
+comment5.target=void\ toLast()
+comment6.params=
+comment6.target=java.lang.Object\ getObject()
+comment7.params=pObject
+comment7.target=void\ setObject(java.lang.Object)
+comment8.params=pObject
+comment8.target=void\ append(java.lang.Object)
+comment9.params=pObject
+comment9.target=void\ insert(java.lang.Object)
+numComments=12

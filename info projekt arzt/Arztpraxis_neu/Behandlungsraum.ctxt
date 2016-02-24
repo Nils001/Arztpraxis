@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Behandlungsraum()
+comment1.params=a
+comment1.target=void\ hinzuf\u00FCgen(Patient)
+comment2.params=
+comment2.target=void\ diagnostizieren()
+comment3.params=a
+comment3.target=void\ setArzt(boolean)
+comment4.params=
+comment4.target=java.lang.String\ getpDiagnose()
+numComments=5

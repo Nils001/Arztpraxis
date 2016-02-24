@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Raum()
+comment1.params=a
+comment1.target=void\ hinzufuegen(Patient)
+comment2.params=
+comment2.target=void\ loeschen()
+comment3.params=
+comment3.target=Patient\ getPatient()
+comment4.params=
+comment4.target=boolean\ istBesetzt()
+numComments=5
